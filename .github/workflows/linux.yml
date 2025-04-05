@@ -1,0 +1,49 @@
+name: Run Lighthouse plugin on Linux
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    - name: Install sitespeed.io
+      run: |
+        npm install sitespeed.io -g
+        npm install @sitespeed.io/plugin-lighthouse -g
+        cd ../webperf-sitespeedio-plugin
+        npm install
+    - name: Lint
+      run: npm run lint
+    - name: Show sitespeed.io version
+      run: sitespeed.io --version
+    - name: Run tests using Lighthouse plugin
+      run: sitespeed.io --plugins.add ./lib/index.js --plugins.remove browsertime https://www.sitespeed.io/
+    - name: Run tests using Lighthouse plugin as mobile
+      run: sitespeed.io --plugins.add ./lib/index.js --plugins.remove browsertime https://www.sitespeed.io/ --mobile
+    - name: Run tests to illustrate maxLoadTime
+      run: sitespeed.io --maxLoadTime 30000 -b firefox --firefox.includeResponseBodies all --firefox.preference privacy.trackingprotection.enabled:false --firefox.preference privacy.donottrackheader.enabled:false --firefox.preference browser.safebrowsing.malware.enabled:false --firefox.preference browser.safebrowsing.phishing.enabled:false --firefox.preference security.tls.version.min:1 --firefox.preference security.tls.version.max:1 --pageCompleteCheckNetworkIdle true --browsertime.screenshot false --screenshot false --screenshotLCP false --browsertime.screenshotLCP false --videoParams.createFilmstrip false --visualMetrics false --visualMetricsPerceptual false --visualMetricsContentful false --browsertime.headless true --silent true --utc true -n 1 https://webperf.se
+
+
+    # - name: Run tests using Lighthouse plugin as mobile
+    #   run: sitespeed.io --plugins.remove assets --plugins.remove budget --plugins.remove coach --plugins.remove pagexray --plugins.remove thirdparty --plugins.remove domains --maxLoadTime 30000 --shm-size=1g -b firefox --firefox.includeResponseBodies all --firefox.preference privacy.trackingprotection.enabled:false --firefox.preference privacy.donottrackheader.enabled:false --firefox.preference browser.safebrowsing.malware.enabled:false --firefox.preference browser.safebrowsing.phishing.enabled:false --firefox.preference security.tls.version.min:1 --firefox.preference security.tls.version.max:1 --pageCompleteCheckNetworkIdle true --plugins.remove screenshot --plugins.remove html --plugins.remove metrics --browsertime.screenshot false --screenshot false --screenshotLCP false --browsertime.screenshotLCP false --videoParams.createFilmstrip false --visualMetrics false --visualMetricsPerceptual false --visualMetricsContentful false --browsertime.headless true --silent true --utc true -n 1
+
+
+
+      
+    # - name: Run tests with configuration file
+    #   run: sitespeed.io --plugins.add ./index.js --plugins.remove browsertime https://www.sitespeed.io/ --lighthouse.config ./test/config.js
+    # - name: Run tests with flag file
+    #   run: sitespeed.io --plugins.add ./index.js --plugins.remove browsertime https://www.sitespeed.io/ --lighthouse.flags ./test/flags.json
+    # - name: Test global install
+    #   run: |
+    #     npm install -g
+    #     sitespeed.io --plugins.add @sitespeed.io/plugin-lighthouse --plugins.remove browsertime https://www.sitespeed.io/

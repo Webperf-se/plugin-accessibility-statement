@@ -1,0 +1,65 @@
+{
+  "name": "plugin-accessibility-statement",
+  "version": "2025.4.0",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Accessibility statement plugin for sitespeed.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Webperf-se/plugin-accessibility-statement.git"
+  },
+  "keywords": [
+    "sitespeed.io",
+    "a11y",
+    "accessibility",
+    "accessibility-statement",
+    "statement",
+    "webperf",
+    "webperf_core",
+    "webperf-core"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Webperf-se/plugin-accessibility-statement/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "engines": {
+    "node": ">=20.x"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "prettier --write --single-quote",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "ava": "6.2.0",
+    "eslint": "9.23.0",
+    "eslint-config-prettier": "10.1.1",
+    "eslint-plugin-prettier": "5.2.5",
+    "eslint-plugin-unicorn": "58.0.0",
+    "prettier": "3.5.3"
+  },
+  "dependencies": {
+    "jsdom": "26.0.0",
+    "eslint": "9.23.0",
+    "globals": "16.0.0",
+    "@sitespeed.io/log": "0.2.6",
+    "@sitespeed.io/plugin": "1.0.0"
+  },
+  "scripts": {
+    "test": "ava",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+  },
+  "main": "./lib/index.js"
+}
