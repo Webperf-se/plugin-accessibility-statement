@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "ava": "6.2.0",
-    "eslint": "9.23.0",
+    "eslint": "9.24.0",
     "eslint-config-prettier": "10.1.1",
     "eslint-plugin-prettier": "5.2.5",
     "eslint-plugin-unicorn": "58.0.0",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "jsdom": "26.0.0",
-    "eslint": "9.23.0",
+    "eslint": "9.24.0",
     "@sitespeed.io/log": "0.2.6",
     "@sitespeed.io/plugin": "1.0.0"
   },
