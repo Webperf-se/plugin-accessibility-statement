@@ -1,6 +1,7 @@
 - let pluginData = pageInfo.data['webperf-plugin-accessibility-statement'].run ? pageInfo.data['webperf-plugin-accessibility-statement'].run : pageInfo.data['webperf-plugin-accessibility-statement'].pageSummary
 
 if pluginData.knowledgeData && pluginData.knowledgeData.issues && pluginData.knowledgeData.issues.length > 0
+    - const severityOrder = { critical: 4, error: 3, warning: 2, info: 1 };
     - if (pluginData.knowledgeData.issues.length > 15)
         h1 Grouped Issues
         - let groupedIssues = {};
@@ -11,7 +12,6 @@ if pluginData.knowledgeData && pluginData.knowledgeData.issues && pluginData.kno
         -     }
         -     groupedIssues[key].count++;
         - });
-        - const severityOrder = { critical: 4, error: 3, warning: 2, info: 1 };
         - let sortedGroupedIssues = Object.values(groupedIssues).sort((a, b) => {
         -     if (severityOrder[b.severity] !== severityOrder[a.severity]) {
         -         return severityOrder[b.severity] - severityOrder[a.severity];
@@ -61,6 +61,12 @@ if pluginData.knowledgeData && pluginData.knowledgeData.issues && pluginData.kno
                             td= issue.line
                             td= issue.column
     - else
+        - pluginData.knowledgeData.issues.sort((a, b) => {
+        -     if (severityOrder[b.severity] !== severityOrder[a.severity]) {
+        -         return severityOrder[b.severity] - severityOrder[a.severity];
+        -     }
+        -     return a.rule.localeCompare(b.rule);
+        - });
         h1 Issues
         table
             thead
