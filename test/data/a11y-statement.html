@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.145.0">
+  <title>Starter Template · Bootstrap v5.3</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
+
+  <script src="/js/color-modes.js"></script>
+
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="apple-touch-icon" href="../assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="../assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="../assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="../assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="../assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#712cf9">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .bi {
+      width: 1em;
+      height: 1em;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" aria-hidden="true">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" aria-hidden="true">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" aria-hidden="true">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" aria-hidden="true">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" aria-hidden="true">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" aria-hidden="true">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="arrow-right-circle" viewBox="0 0 16 16">
+      <path
+        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+    </symbol>
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <title>Bootstrap</title>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+      </path>
+    </symbol>
+  </svg>
+
+  <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-4">Starter template</span>
+      </a>
+    </header>
+
+
+      <div class="grid-container main-grid" lang="sv" dir="ltr">
+        <div class="grid-x">
+          <div class="cell large-8 small-order-1 column-content">
+
+          </div>
+        </div>
+
+
+
+
+
+        <div class="grid-x">
+          <div class="cell large-8 small-order-1 column-content">
+
+          </div>
+        </div>
+
+        <div class="grid-x">
+          <div class="cell large-8 small-order-1 column-content">
+
+
+
+
+            <h1 id="MainContent">Tillgänglighetsredogörelse för example.com</h1>
+
+            <div class="page-intro">
+              <p>WebPerf Core teamet står bakom den här webbplatsen. Vi vill att så många som
+                möjligt ska kunna använda den. Den här sidan beskriver hur example.com uppfyller lagen om tillgänglighet till
+                digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera brister
+                till oss så att vi kan åtgärda dem.</p>
+            </div>
+
+
+
+
+            <div>
+
+
+
+              <div class="page-main-body">
+                <h2>Hur tillgänglig är webbplatsen?</h2>
+                <p>Den här tjänsten är delvis förenlig med&nbsp;lagen om tillgänglighet till digital offentlig service.
+                </p>
+                <h2>Vad kan du göra om du inte kan använda delar av webbplatsen?</h2>
+                <p>Om du behöver information från example.com i något annat format, till exempel tillgänglig PDF, stor text,
+                  Lättläst, ljudinspelning eller punktskrift kan du kontakta oss via e-post. Svarstiden är normalt en
+                  vecka.</p>
+                <p>Du kan kontakta oss på följande sätt:</p>
+                <ul>
+                  <li>skicka e-post till <a href="mailto:registrator@example.com">registrator@example.com</a>&nbsp;</li>
+                  <li>ring vår växel på telefon 0123-456 789</li>
+                </ul>
+                <h2>Rapportera brister i webbplatsens tillgänglighet</h2>
+                <p>Vi strävar hela tiden efter att förbättra webbplatsens tillgänglighet. Om du upptäcker problem som
+                  inte är beskrivna på den här sidan, eller om du anser att vi inte uppfyller lagens krav, meddela oss
+                  så att vi får veta att problemet finns.</p>
+                <p><a
+                    href="/sv/om-webbplatsen/tillganglighetsredogorelse-for-example.com/rapportera-brister-i-webbplatsens-tillganglighet/">Rapportera
+                    brister i webbplatsens tillgänglighet</a></p>
+                <h2>Tillsyn</h2>
+                <p>Myndigheten för digital förvaltning, Digg, har ansvaret för tillsyn för lagen om tillgänglighet till
+                  digital offentlig service. Du kan anmäla till Digg om du tycker att vår digitala service har brister i
+                  tillgänglighet.</p>
+                <p>Du kan också anmäla till Digg om du tycker att vår tillgänglighetsredogörelse har brister eller om du
+                  tycker att vi inte har hanterat din begäran om tillgängliggörande korrekt.</p>
+                <p><a href="https://www.digg.se/tdosanmalan" target="_blank" rel="noopener">Anmäl till Myndigheten för
+                    digital förvaltning, Digg, på deras webbplats</a></p>
+                <h2>Teknisk information om webbplatsens tillgänglighet</h2>
+                <p>Den här webbplatsens är delvis förenlig med nivå AA i standarden&nbsp;Web Content Accessibility
+                  Guidelines version 2.1. Vilket innehåll som inte är tillgängligt beskrivs nedan.</p>
+                <p>&nbsp;</p>
+                <table style="width: 100%; border-collapse: collapse; height: 240px;" border="1">
+                  <caption>Kända tillgänglighetsproblem</caption>
+                  <thead>
+                    <tr style="height: 24px; text-align: center;">
+                      <th style="width: 33.3333%; height: 24px;">Beskrivning</th>
+                      <th style="width: 33.3333%; height: 24px;">WCAG</th>
+                      <th style="width: 33.3333%; height: 24px;">Nivå</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="width: 33.3333%;">En del sidor som innehåller film har en sidregion som saknar
+                        maskinläsbar etikett.</td>
+                      <td style="width: 33.3333%;">4.1.2 Se till att skräddarsydda komponenter fungerar i hjälpmedel
+                      </td>
+                      <td style="width: 33.3333%;">A</td>
+                    </tr>
+                    <tr style="height: 24px;">
+                      <td style="width: 33.3333%; height: 24px;">Andra språk än svenska är inte alltid angivet i
+                        koden.&nbsp;</td>
+                      <td style="width: 33.3333%; height: 24px;">3.1.2 Ange språkförändringar i koden</td>
+                      <td style="width: 33.3333%; height: 24px;">AA</td>
+                    </tr>
+                    <tr style="height: 24px;">
+                      <td style="width: 33.3333%; height: 24px;">Rubriker i flera olika typer av block har felaktig
+                        rubriksättning vilket skapar en felaktig hierarki. En del rubriker är för generella.</td>
+                      <td style="width: 33.3333%; height: 24px;">
+                        <p>2.4.6 Skriv beskrivande rubriker och etiketter</p>
+                        <p>1.3.1 Ange i kod vad sidans olika delar har för roll</p>
+                      </td>
+                      <td style="width: 33.3333%; height: 24px;">
+                        <p>AA</p>
+                        <p>&nbsp;</p>
+                        <p>A</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 33.3333%;">Vissa ledtexter i formulär saknas eller behöver förbättras.</td>
+                      <td style="width: 33.3333%;">3.3.2 Skapa tydliga och klickbara fältetiketter</td>
+                      <td style="width: 33.3333%;">A</td>
+                    </tr>
+                    <tr>
+                      <td style="width: 33.3333%;">En del pdf:er saknar beskrivande länktext.</td>
+                      <td style="width: 33.3333%;">
+                        <p>2.4.4 Tydliga länkar</p>
+                      </td>
+                      <td style="width: 33.3333%;">
+                        <p>A</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 33.3333%;">En del filmer saknar textning.</td>
+                      <td style="width: 33.3333%;">
+                        <p>1.2.2 Texta inspelad rörlig media</p>
+                      </td>
+                      <td style="width: 33.3333%;">
+                        <p>A</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 33.3333%;">I en del diagram och kartor används färger som enda
+                        informationsbärare.</td>
+                      <td style="width: 33.3333%;">
+                        <p>1.4.1 Använd inte enbart färg för att förmedla information</p>
+                      </td>
+                      <td style="width: 33.3333%;">
+                        <p>A</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Vår ambition är att ha åtgärdat alla kända tillgänglighetsproblem senast 2024-12-31.</p>
+                <h2>Hur vi testat webbplatsen</h2>
+                <p>Vi har gjort en självskattning (intern testning) av example.com, med stöd av tillgänglighetsexperter hos
+                  våra leverantörer.</p>
+                <p>Senaste bedömningen gjordes 6 november 2024 och är godkänd av chefen för enheten för
+                  kommunikationskanaler.</p>
+                <p>Webbplatsen publicerades 18 juni 2019. Redogörelsen uppdaterades senast 7 november.&nbsp;</p>
+              </div>
+
+
+
+              <div>
+
+
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+          <div class="cell large-4 small-order-2 column-right" style="margin-top: 77px;">
+            <!-- Render sub navigation -->
+
+            <!-- RSPEAK_STOP -->
+            <div id="Submenu">
+              <nav class="submenu" aria-label="Undermeny">
+
+
+              </nav>
+            </div>
+            <!-- RSPEAK_START -->
+
+
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+      <div class="grid-container">
+        <div class="grid-x">
+
+
+          <div class="cell large-8 small-order-1 column-content page-footer-left">
+            <!-- Render page footer -->
+
+
+
+            <!-- Latest review info -->
+
+            <div class="grid-x latest-reviewed align-middle">
+
+
+
+              <p>
+
+                Senast granskad: <span>7 november 2024</span>
+
+              </p>
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </main>
+    <footer class="pt-5 my-5 text-body-secondary border-top">
+      Created by the Bootstrap team &middot; &copy; 2025
+    </footer>
+  </div>
+  <script defer src="/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
+
+</body>
+
+</html>
