@@ -37,5 +37,5 @@ jobs:
     - name: Show sitespeed.io version
       run: sitespeed.io --version
     - name: Run tests using plugin
-      run: sitespeed.io --plugins.add ./lib/index.js --xvfb -n 1 http://127.0.0.1:3000/
+      run: sitespeed.io --plugins.add ./lib/index.js --browsertime.chrome.includeResponseBodies all --xvfb -n 1 http://127.0.0.1:3000/
  
