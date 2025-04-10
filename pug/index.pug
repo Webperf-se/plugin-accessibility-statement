@@ -1,96 +1,73 @@
 - let pluginData = pageInfo.data['webperf-plugin-accessibility-statement'].run ? pageInfo.data['webperf-plugin-accessibility-statement'].run : pageInfo.data['webperf-plugin-accessibility-statement'].pageSummary
 
-if pluginData.knowledgeData && pluginData.knowledgeData.issues && pluginData.knowledgeData.issues.length > 0
-    - const severityOrder = { critical: 4, error: 3, warning: 2, info: 1 };
-    - if (pluginData.knowledgeData.issues.length > 15)
-        h1 Grouped Issues
-        - let groupedIssues = {};
-        - pluginData.knowledgeData.issues.forEach(issue => {
-        -     let key = `${issue.rule}-${issue.category}-${issue.severity}`;
-        -     if (!groupedIssues[key]) {
-        -         groupedIssues[key] = { rule: issue.rule, category: issue.category, severity: issue.severity, count: 0 };
-        -     }
-        -     groupedIssues[key].count++;
-        - });
-        - let sortedGroupedIssues = Object.values(groupedIssues).sort((a, b) => {
-        -     if (severityOrder[b.severity] !== severityOrder[a.severity]) {
-        -         return severityOrder[b.severity] - severityOrder[a.severity];
-        -     }
-        -     return b.count - a.count;
-        - });
-        table
-            thead
-                tr
-                    th Rule
-                    th Category
-                    th Severity
-                    th Count
-            tbody
-                each value in sortedGroupedIssues
-                    tr
-                        td
-                            a(href=`#rule-${value.rule}`)= value.rule
-                        td= value.category
-                        td= value.severity
-                        td= value.count
+if pluginData.knowledgeData && pluginData.knowledgeData.issues && Object.keys(pluginData.knowledgeData.issues).length > 0
+    - let issueSets = pluginData.knowledgeData.issues;
+    - let issues = Object.values(issueSets);
+    - const severityOrder = { critical: 4, error: 3, warning: 2, info: 1, none: 0 };
+    - let sortedIssues = issues.sort((a, b) => {
+    -     if (severityOrder[b.severity] !== severityOrder[a.severity]) {
+    -         return severityOrder[b.severity] - severityOrder[a.severity];
+    -     }
+    -     return b.subIssues.length - a.subIssues.length;
+    - });
 
-        // Add tables for each rule
-        each value in sortedGroupedIssues
-            h2(id=`rule-${value.rule}`)= `Rule: ${value.rule}`
-            p 
-                strong Category:
-                = value.category
-                br
-                strong Severity:
-                = value.severity
-            - if (pluginData.knowledgeData.issues.filter(issue => issue.rule === value.rule).length > 100)
-                p Note: Only the first 100 issues are displayed.
-            table
-                thead
-                    tr
-                        th URL
-                        th Text
-                        th Line
-                        th Column
-                tbody
-                    - let limitedIssues = pluginData.knowledgeData.issues.filter(issue => issue.rule === value.rule).slice(0, 100);
-                    each issue in limitedIssues
-                        tr
-                            td= issue.url
-                            td= issue.text
-                            td= issue.line
-                            td= issue.column
-    - else
-        - pluginData.knowledgeData.issues.sort((a, b) => {
-        -     if (severityOrder[b.severity] !== severityOrder[a.severity]) {
-        -         return severityOrder[b.severity] - severityOrder[a.severity];
-        -     }
-        -     return a.rule.localeCompare(b.rule);
-        - });
-        h1 Issues
+    h1 Issues
+    table
+        thead
+            tr
+                th Rule
+                th Category
+                th Sub Issue Count
+                th Severity
+        tbody
+            each value in sortedIssues
+                tr
+                    td
+                        a(href=`#rule-${value.rule}`)= value.rule
+                    td= value.category
+                    td= value.subIssues.length
+                    td
+                        if value.severity === 'resolved'
+                            span.label.ok Resolved
+                        else if value.severity === 'warning'
+                            span.label.warning Warning
+                        else if value.severity === 'error'
+                            span.label.error Error
+                        else if value.severity === 'info'
+                            span.label.info Info
+                        else
+                            = value.severity
+
+    // Add tables for each rule
+    each value in sortedIssues
+        h2(id=`rule-${value.rule}`)= `${value.rule}`
+        p 
+            strong Category:
+            = value.category
+            br
+            strong Severity:
+            = value.severity
+        
+        - if (value.subIssues.length > 100)
+            p Note: Only the first 100 issues are displayed.
         table
             thead
                 tr
                     th URL
-                    th Rule
-                    th Category
-                    th Severity
                     th Text
                     th Line
                     th Column
             tbody
-                each issue in pluginData.knowledgeData.issues
+                - let limitedIssues = value.subIssues.slice(0, 100);
+                each issue in limitedIssues
                     tr
                         td= issue.url
-                        td= issue.rule
-                        td= issue.category
-                        td= issue.severity
                         td= issue.text
                         td= issue.line
                         td= issue.column
 else
     p No issues found.
 
-h2 Debug: Plugin Data
-pre
-    code= JSON.stringify(pluginData, null, 3)
+//- h2 Debug: Plugin Data
+//- pre
+//-     code= JSON.stringify(pluginData, null, 3)
