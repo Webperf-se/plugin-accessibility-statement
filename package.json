@@ -52,7 +52,7 @@
     "typescript": "5.7.2"
   },
   "dependencies": {
-    "jsdom": "26.0.0",
+    "jsdom": "26.1.0",
     "eslint": "9.24.0",
     "@sitespeed.io/log": "0.2.6",
     "@sitespeed.io/plugin": "1.0.0"
