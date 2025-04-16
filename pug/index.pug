@@ -1,5 +1,13 @@
 - let pluginData = pageInfo.data['webperf-plugin-accessibility-statement'].run ? pageInfo.data['webperf-plugin-accessibility-statement'].run : pageInfo.data['webperf-plugin-accessibility-statement'].pageSummary
 
+h2 Accessibility Statement
+p This plugin is used to find and check your accessibility statement for errors according to law and accessibility. It can help you catch common mistakes, improve, and ensure consistency across Swedish websites where the accessibility statement requirement exist.
+    br
+    span Using plugin-accessibility-statement v#{pluginData.version} 
+    span with dependencies: 
+        each version, name in pluginData.dependencies
+            span #{name} v#{version}, 
+
 if pluginData.knowledgeData && pluginData.knowledgeData.issues && Object.keys(pluginData.knowledgeData.issues).length > 0
     - let issueSets = pluginData.knowledgeData.issues;
     - let issues = Object.values(issueSets);
@@ -11,7 +19,7 @@ if pluginData.knowledgeData && pluginData.knowledgeData.issues && Object.keys(pl
     -     return b.subIssues.length - a.subIssues.length;
     - });
 
-    h1 Issues
+    h3 Issues
     table
         thead
             tr
@@ -40,7 +48,7 @@ if pluginData.knowledgeData && pluginData.knowledgeData.issues && Object.keys(pl
 
     // Add tables for each rule
     each value in sortedIssues
-        h2(id=`rule-${value.rule}`)= `${value.rule}`
+        h4(id=`rule-${value.rule}`)= `${value.rule}`
         p 
             strong Category:
             = value.category
