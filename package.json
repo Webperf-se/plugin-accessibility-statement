@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "ava": "6.2.0",
+    "ava": "6.3.0",
     "eslint": "9.27.0",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-prettier": "5.2.6",
