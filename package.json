@@ -25,43 +25,23 @@
   "bugs": {
     "url": "https://github.com/Webperf-se/plugin-accessibility-statement/issues"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "engines": {
     "node": ">=20.x"
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint:fix",
-      "prettier --write --single-quote",
-      "git add"
-    ]
-  },
   "devDependencies": {
-    "ava": "6.3.0",
     "eslint": "9.28.0",
-    "eslint-config-prettier": "10.1.5",
-    "eslint-plugin-prettier": "5.4.0",
-    "eslint-plugin-unicorn": "59.0.1",
-    "prettier": "3.5.3",
     "serve": "14.2.4",
-    "serve-handler": "6.1.6",
-    "typescript": "5.8.3"
+    "serve-handler": "6.1.6"
   },
   "dependencies": {
     "jsdom": "26.1.0",
     "@sitespeed.io/plugin": "1.0.0"
   },
   "scripts": {
-    "test": "ava",
     "start-server": "serve test/data/",
     "stop-server": "sudo pkill serve",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+    "lint:fix": "eslint . --fix"
   },
   "main": "./lib/index.js"
 }
