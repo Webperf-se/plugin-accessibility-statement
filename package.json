@@ -1,6 +1,6 @@
 {
   "name": "plugin-accessibility-statement",
-  "version": "2025.6.0",
+  "version": "2025.6.1",
   "type": "module",
   "exports": "./lib/index.js",
   "publishConfig": {
