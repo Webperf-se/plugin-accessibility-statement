@@ -40,4 +40,4 @@ jobs:
     - name: Show sitespeed.io version
       run: sitespeed.io --version
     - name: Run tests using plugin
-      run: sitespeed.io --plugins.add ./lib/index.js --browsertime.chrome.includeResponseBodies all --xvfb -n 1 ${{ github.event.inputs.url }}
+      run: sitespeed.io --plugins.add ./lib/index.js --browsertime.chrome.includeResponseBodies all --xvfb -n 1 --allystatement.terminal.showresults true ${{ github.event.inputs.url }}
