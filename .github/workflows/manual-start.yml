@@ -1,0 +1,43 @@
+name: "Manual - Run test against url"
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Webpage url to test'
+        required: true
+        default: 'https://webperf.se/'
+        type: string
+env:
+  TEST_TAG: webperfse/webperf-core:test
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    - name: Install latest Chrome
+      run: |
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+        sudo apt-get update
+        sudo apt-get --only-upgrade install google-chrome-stable
+        google-chrome --version
+    - name: Browser versions
+      run: |
+        google-chrome --version
+    - name: Install sitespeed.io
+      run: |
+        npm install sitespeed.io -g
+        cd ../plugin-accessibility-statement
+        npm install
+    - name: Start local HTTP server
+      run: (npm run start-server&)
+    - name: Lint
+      run: npm run lint
+    - name: Show sitespeed.io version
+      run: sitespeed.io --version
+    - name: Run tests using plugin
+      run: sitespeed.io --plugins.add ./lib/index.js --browsertime.chrome.includeResponseBodies all --xvfb -n 1 ${{ github.event.inputs.url }}
