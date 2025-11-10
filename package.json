@@ -29,7 +29,7 @@
     "node": ">=20.x"
   },
   "devDependencies": {
-    "eslint": "9.39.0",
+    "eslint": "9.39.1",
     "serve": "14.2.5",
     "serve-handler": "6.1.6"
   },
