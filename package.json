@@ -35,7 +35,7 @@
     "serve-handler": "6.1.6"
   },
   "dependencies": {
-    "jsdom": "28.1.0",
+    "jsdom": "29.0.0",
     "@sitespeed.io/plugin": "1.0.0"
   },
   "scripts": {
