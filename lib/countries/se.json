@@ -1,91 +1,162 @@
 {
-  "code": "se",
-  "name": "Sweden",
-  "status": "supported",
-  "languages": ["sv"],
-  "tlds": ["se"],
-  "law": {
-    "name": "Lagen (2018:1937) om tillgänglighet till digital offentlig service (DOS-lagen)",
-    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20181937-om-tillganglighet-till-digital_sfs-2018-1937/"
-  },
-  "authority": {
-    "name": "DIGG",
-    "url": "https://www.digg.se/"
-  },
-  "statement": {
-    "strict": ["tillg(.{1,6}|ä|&auml;|&#228;)nglighetsredog(.{1,6}|ö|&ouml;|&#246;)relse"],
-    "loose": ["tillg(.{1,6}|ä|&auml;|&#228;)nglighet"],
-    "linkText": [
-      { "pattern": "om webbplats", "precision": 0.29 },
-      { "pattern": "^[ \\t\\r\\n]*om [a-z]+$", "precision": 0.25 },
-      { "pattern": "^[ \\t\\r\\n]*om [a-z]+", "precision": 0.2 }
+    "code": "se",
+    "name": "Sweden",
+    "status": "supported",
+    "languages": [
+        "sv"
     ],
-    "externalHosts": [],
-    "externalOnly": false
-  },
-  "compliance": {
-    "full": ["helt förenlig"],
-    "partial": ["inte helt förenlig", "ej helt förenlig", "delvis förenlig"],
-    "none": ["inte förenlig", "ej förenlig"]
-  },
-  "burden": ["12[ \\t\\r\\n]§ lagen", "Oskäligt betungande anpassning"],
-  "burdenReference": "12 §",
-  "evaluation": [
-    "sj(.{1,6}|ä|&auml;|&#228;)lvskattning",
-    "intern[a]{0,1} kontroller",
-    "intern[a]{0,1} test(ning|er){0,1}",
-    "utvärderingsmetod",
-    "tillgänglighetsexpert(er){0,1}",
-    "funka",
-    "etu ab",
-    "siteimprove",
-    "oberoende granskning",
-    "oberoende tillgänglighetsgranskning(ar){0,1}",
-    "tillgänglighetskonsult(er){0,1}",
-    "med hjälp av",
-    "egna tester",
-    "oberoende experter",
-    "Hur vi testat webbplats(en){0,1}",
-    "vi testat webbplatsen",
-    "intervjuer",
-    "rutiner",
-    "checklistor",
-    "checklista",
-    "utbildningar",
-    "automatiserade",
-    "automatisk",
-    "maskinell",
-    "kontrollverktyg",
-    "tillgänglighetskontroll"
-  ],
-  "dates": {
-    "months": ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"],
-    "triggers": [
-      { "pattern": "bedömning", "weight": 1.0 },
-      { "pattern": "redogörelse", "weight": 0.9 },
-      { "pattern": "uppdater", "weight": 0.5 },
-      { "pattern": "gransk", "weight": 0.7 }
+    "tlds": [
+        "se",
+        "nu",
+        "stockholm"
     ],
-    "formats": ["d month yyyy", "month yyyy", "yyyy-mm-dd", "[d ]month yyyy"]
-  },
-  "enforcement": {
-    "label": "DIGG's report function",
-    "accepted": ["^https://www\\.digg\\.se/tdosanmalan$"],
-    "canonical": ["^https://www\\.digg\\.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet$"],
-    "old": ["digg\\.se[a-z/-]+anmal-bristande-tillganglighet"],
-    "text": [],
-    "oldText": []
-  },
-  "letters": { "upper": "A-ZÅÄÖ", "lower": "a-zåäö" },
-  "sources": [
-    "https://www.digg.se/tdosanmalan",
-    "https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet"
-  ],
-  "notes": [
-    "Encodes the rules that were hard-coded in harAnalyzer.js before country support was added; behaviour must stay identical.",
-    "enforcement.accepted is the short DIGG URL: it counts as a correct link but produces no info issue, exactly as before.",
-    "Date triggers: the date whose trigger has the LOWEST weight is reported as the updated date (legacy behaviour), so 'uppdater' (0.5) beats 'bedömning' (1.0).",
-    "letters keeps the A-ZÅÄÖ character classes the old code used to cut out the sentence around a match; other countries use Unicode letter classes.",
-    "Two regex typos from the old code were fixed when moving to Unicode mode: a stray ']' after 'test(ning|er){0,1}' and a space inside '{1, 6}' in the self-assessment pattern."
-  ]
+    "law": {
+        "name": "Lagen (2018:1937) om tillgänglighet till digital offentlig service (DOS-lagen)",
+        "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20181937-om-tillganglighet-till-digital_sfs-2018-1937/"
+    },
+    "authority": {
+        "name": "DIGG",
+        "url": "https://www.digg.se/"
+    },
+    "statement": {
+        "strict": [
+            "tillg(.{1,6}|ä|&auml;|&#228;)nglighetsredog(.{1,6}|ö|&ouml;|&#246;)relse"
+        ],
+        "loose": [
+            "tillg(.{1,6}|ä|&auml;|&#228;)nglighet"
+        ],
+        "linkText": [
+            {
+                "pattern": "om webbplats",
+                "precision": 0.29
+            },
+            {
+                "pattern": "^[ \\t\\r\\n]*om [a-z]+$",
+                "precision": 0.25
+            },
+            {
+                "pattern": "^[ \\t\\r\\n]*om [a-z]+",
+                "precision": 0.2
+            }
+        ],
+        "externalHosts": [],
+        "externalOnly": false
+    },
+    "compliance": {
+        "full": [
+            "helt förenlig"
+        ],
+        "partial": [
+            "inte helt förenlig",
+            "ej helt förenlig",
+            "delvis förenlig"
+        ],
+        "none": [
+            "inte förenlig",
+            "ej förenlig"
+        ]
+    },
+    "burden": [
+        "12[ \\t\\r\\n]§ lagen",
+        "Oskäligt betungande anpassning"
+    ],
+    "burdenReference": "12 §",
+    "evaluation": [
+        "sj(.{1,6}|ä|&auml;|&#228;)lvskattning",
+        "intern[a]{0,1} kontroller",
+        "intern[a]{0,1} test(ning|er){0,1}",
+        "utvärderingsmetod",
+        "tillgänglighetsexpert(er){0,1}",
+        "funka",
+        "etu ab",
+        "siteimprove",
+        "oberoende granskning",
+        "oberoende tillgänglighetsgranskning(ar){0,1}",
+        "tillgänglighetskonsult(er){0,1}",
+        "med hjälp av",
+        "egna tester",
+        "oberoende experter",
+        "Hur vi testat webbplats(en){0,1}",
+        "vi testat webbplatsen",
+        "intervjuer",
+        "rutiner",
+        "checklistor",
+        "checklista",
+        "utbildningar",
+        "automatiserade",
+        "automatisk",
+        "maskinell",
+        "kontrollverktyg",
+        "tillgänglighetskontroll"
+    ],
+    "dates": {
+        "months": [
+            "januari",
+            "februari",
+            "mars",
+            "april",
+            "maj",
+            "juni",
+            "juli",
+            "augusti",
+            "september",
+            "oktober",
+            "november",
+            "december"
+        ],
+        "triggers": [
+            {
+                "pattern": "bedömning",
+                "weight": 1.0
+            },
+            {
+                "pattern": "redogörelse",
+                "weight": 0.9
+            },
+            {
+                "pattern": "uppdater",
+                "weight": 0.5
+            },
+            {
+                "pattern": "gransk",
+                "weight": 0.7
+            }
+        ],
+        "formats": [
+            "d month yyyy",
+            "month yyyy",
+            "yyyy-mm-dd",
+            "[d ]month yyyy"
+        ]
+    },
+    "enforcement": {
+        "label": "DIGG's report function",
+        "accepted": [
+            "^https://www\\.digg\\.se/tdosanmalan$"
+        ],
+        "canonical": [
+            "^https://www\\.digg\\.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet$"
+        ],
+        "old": [
+            "digg\\.se[a-z/-]+anmal-bristande-tillganglighet"
+        ],
+        "text": [],
+        "oldText": []
+    },
+    "letters": {
+        "upper": "A-ZÅÄÖ",
+        "lower": "a-zåäö"
+    },
+    "sources": [
+        "https://www.digg.se/tdosanmalan",
+        "https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet"
+    ],
+    "notes": [
+        "Encodes the rules that were hard-coded in harAnalyzer.js before country support was added; behaviour must stay identical.",
+        "enforcement.accepted is the short DIGG URL: it counts as a correct link but produces no info issue, exactly as before.",
+        "Date triggers: the date whose trigger has the LOWEST weight is reported as the updated date (legacy behaviour), so 'uppdater' (0.5) beats 'bedömning' (1.0).",
+        "letters keeps the A-ZÅÄÖ character classes the old code used to cut out the sentence around a match; other countries use Unicode letter classes.",
+        "Two regex typos from the old code were fixed when moving to Unicode mode: a stray ']' after 'test(ning|er){0,1}' and a space inside '{1, 6}' in the self-assessment pattern.",
+        "'.nu' and '.stockholm' are treated as Swedish: .nu is used almost only by Swedish sites, and .stockholm is the City of Stockholm's TLD."
+    ]
 }

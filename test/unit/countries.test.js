@@ -340,3 +340,16 @@ describe('analyzer per country', () => {
         assert.equal(issues['has-old-notification-function-link'].severity, 'resolved');
     });
 });
+
+describe('swedish sites outside .se', () => {
+    test('.nu and .stockholm select Swedish rules even without lang', () => {
+        assert.equal(selectCountry({ url: 'https://www.studera.nu/' }).code, 'se');
+        assert.equal(selectCountry({ url: 'https://start.stockholm/', lang: 'en' }).code, 'se');
+    });
+
+    test('the country option wins over an English page on .com', () => {
+        const s = selectCountry({ option: 'se', url: 'https://www.visitstockholm.com/', lang: 'en' });
+        assert.equal(s.code, 'se');
+        assert.equal(s.source, 'option');
+    });
+});
