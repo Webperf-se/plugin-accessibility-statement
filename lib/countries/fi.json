@@ -1,0 +1,96 @@
+{
+  "code": "fi",
+  "name": "Finland",
+  "status": "supported",
+  "languages": ["fi"],
+  "tlds": ["fi"],
+  "law": {
+    "name": "Laki digitaalisten palvelujen tarjoamisesta (306/2019) / Lag om tillhandahållande av digitala tjänster",
+    "url": "https://finlex.fi/sv/lagstiftning/2019/306"
+  },
+  "authority": {
+    "name": "Traficom",
+    "url": "https://www.saavutettavuusvaatimukset.fi/"
+  },
+  "statement": {
+    "strict": [
+      "saavutettavuusseloste",
+      "tillg(ä|&auml;|&#228;)nglighetsutl(å|&aring;|&#229;)tande",
+      "accessibility statement"
+    ],
+    "loose": ["saavutettavuus", "tillg(ä|&auml;|&#228;)nglighet", "accessibility"],
+    "linkText": [],
+    "externalHosts": [],
+    "externalOnly": false
+  },
+  "compliance": {
+    "full": [
+      "täyttää[^.]{0,120}kokonaan",
+      "täyttää (kaikki )?(saavutettavuus)?vaatimukset(?! osittain| suurilta)",
+      "uppfyller helt",
+      "uppfyller (alla )?tillgänglighetskraven(?! delvis)",
+      "fully (meets|compliant)"
+    ],
+    "partial": [
+      "täyttää[^.]{0,120}osittain",
+      "täyttää[^.]{0,120}suurilta osin",
+      "uppfyller delvis",
+      "uppfyller[^.]{0,80}delvis",
+      "partially (meets|compliant)"
+    ],
+    "none": ["ei täytä", "uppfyller inte", "is not compliant", "does not meet"]
+  },
+  "burden": ["kohtuuton rasite", "oproportionell börda", "disproportionate burden"],
+  "burdenReference": "",
+  "evaluation": [
+    "itsearviointi",
+    "itse arvioi",
+    "arvioinut itse",
+    "ulkopuolinen (arvioi|asiantuntija|auditoi|taho)",
+    "kolmannen osapuolen",
+    "arvioinut",
+    "auditoi",
+    "självbedömning",
+    "självutvärdering",
+    "utomstående",
+    "tredje part",
+    "self-assessment",
+    "third party"
+  ],
+  "dates": {
+    "months": [],
+    "triggers": [
+      { "pattern": "päivitet", "weight": 0.5 },
+      { "pattern": "uppdater", "weight": 0.5 },
+      { "pattern": "updated", "weight": 0.5 },
+      { "pattern": "laadit", "weight": 0.9 },
+      { "pattern": "upprätta", "weight": 0.9 },
+      { "pattern": "prepared", "weight": 0.9 }
+    ],
+    "formats": ["d.m.yyyy", "yyyy-mm-dd"]
+  },
+  "enforcement": {
+    "label": "Traficom's complaint procedure",
+    "accepted": ["saavutettavuusvaatimukset\\.fi", "tillganglighetskrav\\.fi", "webaccessibility\\.fi"],
+    "canonical": [
+      "saavutettavuusvaatimukset\\.fi/fi/tee-saavutettavuuskantelu",
+      "saavutettavuusvaatimukset\\.fi/sv/anfor-tillganglighetsklagan",
+      "saavutettavuus@traficom\\.fi"
+    ],
+    "old": ["saavutettavuusvaatimukset\\.fi/oikeutesi", "saavutettavuus@avi\\.fi"],
+    "text": ["saavutettavuus ?\\(at\\) ?traficom\\.fi", "saavutettavuus@traficom\\.fi"],
+    "oldText": ["saavutettavuus ?\\(at\\) ?avi\\.fi", "saavutettavuus@avi\\.fi"]
+  },
+  "sources": [
+    "https://www.saavutettavuusvaatimukset.fi/",
+    "https://finlex.fi/sv/lagstiftning/2019/306",
+    "https://www.helsinki.fi/fi/saavutettavuusseloste",
+    "https://www.kela.fi/saavutettavuusseloste"
+  ],
+  "notes": [
+    "Finnish statements use numeric dates (d.m.yyyy); no month names are configured.",
+    "Finland-Swedish statements say 'Tillgänglighetsutlåtande', not the Swedish 'tillgänglighetsredogörelse'. A Swedish-language site on .fi follows these rules because the TLD wins over lang.",
+    "Supervision moved from Etelä-Suomen aluehallintovirasto to Traficom on 1 Jan 2025; the AVI address and the removed /oikeutesi/ page count as outdated.",
+    "Evaluation-method phrases are derived from the EU model statement, not observed live."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "code": "is",
+  "name": "Iceland",
+  "status": "pending",
+  "languages": ["is"],
+  "tlds": ["is"],
+  "law": {
+    "name": "Lög um aðgengi að vefsetrum og smáforritum opinberra aðila, nr. 20/2026",
+    "url": "https://www.althingi.is/lagas/nuna/2026020.html"
+  },
+  "authority": {
+    "name": "",
+    "url": ""
+  },
+  "statement": {
+    "strict": ["a(ð|&eth;|&#240;)gengisyfirl(ý|&yacute;|&#253;)sing", "yfirl(ý|&yacute;|&#253;)sing um a(ð|&eth;|&#240;)gengi"],
+    "loose": ["a(ð|&eth;|&#240;)gengi"],
+    "linkText": [],
+    "externalHosts": [],
+    "externalOnly": false
+  },
+  "compliance": {
+    "full": [],
+    "partial": [],
+    "none": []
+  },
+  "burden": ["(ó|&oacute;|&#243;)h(ó|&oacute;|&#243;)fleg byr(ð|&eth;|&#240;)i"],
+  "burdenReference": "",
+  "evaluation": [],
+  "dates": {
+    "months": ["janúar", "febrúar", "mars", "apríl", "maí", "júní", "júlí", "ágúst", "september", "október", "nóvember", "desember"],
+    "triggers": [],
+    "formats": ["d. month yyyy", "yyyy-mm-dd"]
+  },
+  "enforcement": {
+    "label": "",
+    "accepted": [],
+    "canonical": [],
+    "old": [],
+    "text": [],
+    "oldText": []
+  },
+  "sources": [
+    "https://www.althingi.is/lagas/nuna/2026020.html",
+    "https://island.is/samradsgatt/mal/4055"
+  ],
+  "notes": [
+    "Pending: the law entered into force 26 March 2026 but obligations start 1 Jan 2027 (websites) and the monitoring and complaints bodies are to be named by regulation. Until then no site is rated and no-country-rules (info) is reported instead of no-a11y-statement.",
+    "Compliance wording, date wording and complaint URL are not yet defined."
+  ]
+}

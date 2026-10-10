@@ -42,6 +42,7 @@
     "start-server": "serve test/data/",
     "stop-server": "sudo pkill serve",
     "lint": "eslint .",
+    "test": "node --test test/unit/*.test.js",
     "lint:fix": "eslint . --fix"
   },
   "main": "./lib/index.js"

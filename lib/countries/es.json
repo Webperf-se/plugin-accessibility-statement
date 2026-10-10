@@ -1,0 +1,82 @@
+{
+  "code": "es",
+  "name": "Spain",
+  "status": "supported",
+  "languages": ["es", "ca", "gl", "eu"],
+  "tlds": ["es"],
+  "law": {
+    "name": "Real Decreto 1112/2018, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699"
+  },
+  "authority": {
+    "name": "Observatorio de Accesibilidad Web",
+    "url": "https://administracionelectronica.gob.es/"
+  },
+  "statement": {
+    "strict": [
+      "declaraci(ó|o|&oacute;|&#243;)n de accesibilidad",
+      "declaraci(ó|o|&oacute;|&#243;) d['’]accessibilitat",
+      "declaraci(ó|o|&oacute;|&#243;)n de accesibilidade",
+      "irisgarritasun(aren gaineko)? deklarazioa"
+    ],
+    "loose": ["accesibilidad", "accessibilitat", "accesibilidade", "irisgarritasun", "erabilerraztasun"],
+    "linkText": [],
+    "externalHosts": [],
+    "externalOnly": false
+  },
+  "compliance": {
+    "full": ["plenamente conforme", "totalmente conforme", "plenament conforme"],
+    "partial": ["parcialmente conforme", "parcialment conforme"],
+    "none": ["a(ú|u)n no es conforme", "no es conforme", "encara no (é|e)s conforme", "a(í|i)nda non (é|e) conforme"]
+  },
+  "burden": [
+    "carga desproporcionada(?!\\s*:?\\s*(no aplica|no procede|ninguna|n/a))",
+    "c(à|a)rrega desproporcionada(?!\\s*:?\\s*(no s['’]aplica|cap))"
+  ],
+  "burdenReference": "art. 7 RD 1112/2018",
+  "evaluation": [
+    "autoevaluaci(ó|o)n",
+    "auto-evaluaci(ó|o)n",
+    "autoavaluaci(ó|o)",
+    "evaluaci(ó|o)n (realizada|efectuada|llevada a cabo) por",
+    "m(é|e)todo empleado",
+    "terceros",
+    "auditor(í|i)a"
+  ],
+  "dates": {
+    "months": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "triggers": [
+      { "pattern": "revisi(ó|o)n", "weight": 0.5 },
+      { "pattern": "revisad", "weight": 0.5 },
+      { "pattern": "actualizad", "weight": 0.5 },
+      { "pattern": "preparada", "weight": 0.9 },
+      { "pattern": "elaborada", "weight": 0.9 }
+    ],
+    "formats": ["d de month de yyyy", "dd/mm/yyyy", "yyyy-mm-dd"]
+  },
+  "enforcement": {
+    "label": "the complaint procedure (sede electrónica)",
+    "accepted": [],
+    "canonical": [
+      "^https?://([^/]*\\.)?sede\\.",
+      "sede\\.gob\\.es",
+      "administracionelectronica\\.gob\\.es"
+    ],
+    "old": [],
+    "text": [],
+    "oldText": []
+  },
+  "sources": [
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699",
+    "https://www.uned.es/universidad/inicio/accesibilidad.html",
+    "https://www.madrid.es/portales/munimadrid/accesibilidad.html",
+    "https://ajuntament.barcelona.cat/declaracio-accessibilitat/ca/ajuntament-de-barcelona"
+  ],
+  "notes": [
+    "There is no national complaint URL: the reclamación goes to the entity's own sede electrónica. Any sede.* host, sede.gob.es subdomain or administracionelectronica.gob.es link counts as canonical.",
+    "The research also suggests accepting the heading 'Procedimiento de aplicación' followed by any link; that is not encoded.",
+    "has-old-notification-function-link never fires.",
+    "Catalan and Galician compliance wording is covered; Catalan/Galician month names and date wording are not, so co-official statements may report no-updated-date.",
+    "'Carga desproporcionada: No aplica' is a common empty section and is not treated as a burden claim."
+  ]
+}

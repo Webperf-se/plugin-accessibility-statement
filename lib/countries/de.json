@@ -1,0 +1,109 @@
+{
+  "code": "de",
+  "name": "Germany",
+  "status": "supported",
+  "languages": ["de"],
+  "tlds": ["de"],
+  "law": {
+    "name": "Behindertengleichstellungsgesetz (BGG) § 12b and Barrierefreie-Informationstechnik-Verordnung (BITV 2.0) § 7; the Länder have their own laws",
+    "url": "https://www.gesetze-im-internet.de/bitv_2_0/__7.html"
+  },
+  "authority": {
+    "name": "Überwachungsstelle des Bundes für Barrierefreiheit von Informationstechnik (BFIT-Bund)",
+    "url": "https://www.bfit-bund.de/"
+  },
+  "statement": {
+    "strict": [
+      "erkl(ä|ae|&auml;|&#228;)rung zur (digitalen )?barrierefreiheit",
+      "barrierefreiheitserkl(ä|ae|&auml;|&#228;)rung",
+      "konformit(ä|ae|&auml;|&#228;)tserkl(ä|ae|&auml;|&#228;)rung zur barrierefreiheit"
+    ],
+    "loose": ["barrierefreiheit", "barrierefrei"],
+    "linkText": [],
+    "externalHosts": [],
+    "externalOnly": false
+  },
+  "compliance": {
+    "full": [
+      "vollst(ä|ae)ndig (vereinbar|konform|barrierefrei)",
+      "(ist|sind) barrierefrei"
+    ],
+    "partial": [
+      "teilweise (vereinbar|konform|barrierefrei|in einklang)",
+      "nicht vollst(ä|ae)ndig (vereinbar|konform|barrierefrei)",
+      "im wesentlichen barrierefrei",
+      "bis auf (die )?folgende(n)? ausnahmen[^.]{0,120}vereinbar"
+    ],
+    "none": [
+      "nicht vereinbar",
+      "nicht konform",
+      "(ist|sind) nicht barrierefrei"
+    ]
+  },
+  "burden": ["unverh(ä|ae)ltnism(ä|ae)(ß|ss)ige(n)? belastung"],
+  "burdenReference": "",
+  "evaluation": [
+    "selbstbewertung",
+    "selbstevaluierung",
+    "selbsteinsch(ä|ae)tzung",
+    "bitv-test",
+    "beruht auf",
+    "externe(n)? pr(ü|ue)fung",
+    "gepr(ü|ue)ft (durch|von)",
+    "pr(ü|ue)fverfahren",
+    "gutachten"
+  ],
+  "dates": {
+    "months": ["januar", "februar", "märz", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "dezember"],
+    "triggers": [
+      { "pattern": "(ü|ue)berpr(ü|ue)ft", "weight": 0.5 },
+      { "pattern": "aktualisiert", "weight": 0.5 },
+      { "pattern": "letzte pr(ü|ue)fung", "weight": 0.5 },
+      { "pattern": "erstellt", "weight": 0.9 }
+    ],
+    "formats": ["d. month yyyy", "month yyyy", "dd.mm.yyyy", "yyyy-mm-dd"]
+  },
+  "enforcement": {
+    "label": "the enforcement procedure (Schlichtungsstelle BGG or the Land body)",
+    "accepted": [],
+    "canonical": [
+      "schlichtungsstelle-bgg\\.de",
+      "bfit-bund\\.de",
+      "bitv@bayern\\.de",
+      "ldbv\\.bayern\\.de/digitalisierung/bitv",
+      "ombudsstelle-barrierefreie-it@mags\\.nrw\\.de",
+      "mags\\.nrw/ombudsstelle-barrierefreie-informationstechnik",
+      "berlin\\.de/lb/digitale-barrierefreiheit",
+      "schlichtung@barrierefreiheit\\.bwl\\.de",
+      "barrierefreiheit-bw\\.de",
+      "schlichtungsstelle@ms\\.niedersachsen\\.de",
+      "behindertenbeauftragte-niedersachsen\\.de",
+      "durchsetzungsstelle-lbit@rpgi\\.hessen\\.de",
+      "lbit\\.hessen\\.de/ueber-uns/durchsetzungsstelle"
+    ],
+    "old": [],
+    "text": [
+      "schlichtungsstelle-bgg\\.de",
+      "schlichtungsstelle nach § ?16 bgg",
+      "bitv@bayern\\.de",
+      "ombudsstelle-barrierefreie-it@mags\\.nrw\\.de",
+      "schlichtung@barrierefreiheit\\.bwl\\.de",
+      "schlichtungsstelle@ms\\.niedersachsen\\.de",
+      "durchsetzungsstelle-lbit@rpgi\\.hessen\\.de"
+    ],
+    "oldText": []
+  },
+  "sources": [
+    "https://www.bfit-bund.de/",
+    "https://www.bfit-bund.de/DE/Kontakt/Ueberwachungsstellen-der-Laender/ueberwachungsstelle_laender_node",
+    "https://www.schlichtungsstelle-bgg.de",
+    "https://www.uni-heidelberg.de/de/barrierefreiheit",
+    "https://www.stadt-koeln.de/basisdienste/erklaerung-zur-barrierefreiheit"
+  ],
+  "notes": [
+    "The enforcement body depends on the Land, so the federal Schlichtungsstelle, BFIT-Bund and every Land body in the research (Bayern, NRW, Berlin, BW, Niedersachsen, Hessen) count as canonical. Other Länder are not listed yet and give no-notification-function-link.",
+    "There is no outdated enforcement link, so has-old-notification-function-link never fires.",
+    "'(ist|sind) barrierefrei' as full compliance is a heuristic from real statements, not the BITV model wording.",
+    "burdenReference is empty because federal and Land statements cite different provisions."
+  ]
+}
