@@ -75,3 +75,11 @@ test('page data is only used when no link in the page is about accessibility', (
   assert.equal(withoutLink['https://www.example.se/x/tillganglighetsredogorelse-app/'], 0.5);
   assert.equal(withoutLink['https://www.example.se/omoss/'], 0.25);
 });
+
+test('a link on a site with a port keeps the port', () => {
+  // org_url_start is built from protocol and hostname only, so it never
+  // carries the port the page was served on.
+  const urls = analyzer.getInterestingUrls('http://127.0.0.1', body(
+    '<a href="a11y-statement.html">Tillgänglighetsredogörelse</a>'), LOCALE_SE, 'http://127.0.0.1:3000/');
+  assert.deepEqual(Object.keys(urls), ['http://127.0.0.1:3000/a11y-statement.html']);
+});
