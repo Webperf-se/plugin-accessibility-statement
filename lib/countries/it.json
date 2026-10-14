@@ -1,0 +1,66 @@
+{
+  "code": "it",
+  "name": "Italy",
+  "status": "supported",
+  "languages": ["it"],
+  "tlds": ["it"],
+  "law": {
+    "name": "Legge 9 gennaio 2004, n. 4 (Legge Stanca) as amended by D.Lgs. 106/2018 and D.Lgs. 82/2022; AgID Linee guida sull'accessibilità degli strumenti informatici",
+    "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2004-01-09;4"
+  },
+  "authority": {
+    "name": "AgID",
+    "url": "https://www.agid.gov.it/"
+  },
+  "statement": {
+    "strict": ["dichiarazione di accessibilit(à|a|&agrave;|&#224;)"],
+    "loose": ["accessibilit(à|a|&agrave;|&#224;)"],
+    "linkText": [],
+    "externalHosts": ["form.agid.gov.it"],
+    "externalOnly": true
+  },
+  "compliance": {
+    "full": ["pienamente conforme", "totalmente conforme", "stato di conformit(à|a)\\s*:?\\s*conforme"],
+    "partial": ["parzialmente conforme"],
+    "none": ["non (è|e) conforme", "non conforme"]
+  },
+  "burden": ["onere sproporzionato"],
+  "burdenReference": "",
+  "evaluation": [
+    "autovalutazione",
+    "valutazione (effettuata|condotta|eseguita) da",
+    "valutazione di terz[ei]",
+    "metodo (di valutazione|utilizzato)"
+  ],
+  "dates": {
+    "months": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+    "triggers": [
+      { "pattern": "riesaminat", "weight": 0.9 },
+      { "pattern": "aggiornat", "weight": 0.9 },
+      { "pattern": "redatta", "weight": 0.5 }
+    ],
+    "formats": ["dd/mm/yyyy", "d month yyyy", "yyyy-mm-dd"]
+  },
+  "enforcement": {
+    "label": "the Difensore civico per il digitale",
+    "accepted": [],
+    "canonical": [
+      "agid\\.gov\\.it/it/agenzia/difensore-civico",
+      "agid\\.gov\\.it/it/form/difensore-civico",
+      "protocollo@pec\\.agid\\.gov\\.it"
+    ],
+    "old": [],
+    "text": ["protocollo@pec\\.agid\\.gov\\.it"],
+    "oldText": []
+  },
+  "sources": [
+    "https://form.agid.gov.it/view/8d56b490-74e4-11ef-8651-49a974135ee0",
+    "https://form.agid.gov.it/view/f9968430-93da-11f0-a5fe-97efea99bc7d",
+    "https://form.agid.gov.it/c_h501/roma_capitale_-_portale_istituzionale/dichiarazione",
+    "https://www.agid.gov.it/it/agenzia/difensore-civico-il-digitale"
+  ],
+  "notes": [
+    "Statements exist only on form.agid.gov.it. Its /view/<uuid> pages are a SvelteKit app whose HTML is an empty shell, so a link from the site to form.agid.gov.it counts as the statement and the content rules are reported as resolved (externalOnly).",
+    "Compliance, date and enforcement patterns are kept for the day the rendered AgID content is available; they are not used today."
+  ]
+}

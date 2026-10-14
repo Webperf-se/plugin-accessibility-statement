@@ -1,0 +1,71 @@
+{
+  "code": "fr",
+  "name": "France",
+  "status": "supported",
+  "languages": ["fr"],
+  "tlds": ["fr"],
+  "law": {
+    "name": "Loi n° 2005-102 art. 47 and décret n° 2019-768; RGAA 4.1.2",
+    "url": "https://accessibilite.numerique.gouv.fr/"
+  },
+  "authority": {
+    "name": "DINUM",
+    "url": "https://accessibilite.numerique.gouv.fr/"
+  },
+  "statement": {
+    "strict": [
+      "d(é|e|&eacute;|&#233;)claration d['’]accessibilit(é|e|&eacute;|&#233;)",
+      "accessibilit(é|e|&eacute;|&#233;) ?: ?(totalement|partiellement|non) conforme"
+    ],
+    "loose": ["accessibilit(é|e|&eacute;|&#233;)"],
+    "linkText": [],
+    "externalHosts": [],
+    "externalOnly": false
+  },
+  "compliance": {
+    "full": ["totalement conforme", "en totale conformit(é|e)", "pleinement conforme"],
+    "partial": ["partiellement conforme", "en conformit(é|e) partielle"],
+    "none": ["non conforme", "pas en conformit(é|e)", "n['’]est pas conforme"]
+  },
+  "burden": ["charge disproportionn(é|e)e(?!s?\\s*:?\\s*(aucune|n(é|e)ant|sans objet))"],
+  "burdenReference": "art. 4 décret 2019-768",
+  "evaluation": [
+    "audit",
+    "auto-?(é|e)valuation",
+    "(é|e)valuation (r(é|e)alis(é|e)e|effectu(é|e)e) par",
+    "outils pour (é|e)valuer",
+    "environnement de test",
+    "r(é|e)sultats des tests"
+  ],
+  "dates": {
+    "months": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    "triggers": [
+      { "pattern": "mis(e|es)? (à|a) jour", "weight": 0.9 },
+      { "pattern": "r(é|e)examen", "weight": 0.9 },
+      { "pattern": "(é|e)tablie", "weight": 0.5 },
+      { "pattern": "r(é|e)alis(é|e)e", "weight": 0.5 },
+      { "pattern": "pr(é|e)par(é|e)e", "weight": 0.5 }
+    ],
+    "formats": ["d[er] month yyyy", "month yyyy", "dd/mm/yyyy", "yyyy-mm-dd"]
+  },
+  "enforcement": {
+    "label": "the Défenseur des droits",
+    "accepted": [],
+    "canonical": ["defenseurdesdroits\\.fr"],
+    "old": [],
+    "text": ["defenseurdesdroits\\.fr"],
+    "oldText": []
+  },
+  "sources": [
+    "https://accessibilite.numerique.gouv.fr/ressources/modele-de-declaration/",
+    "https://www.univ-lille.fr/accessibilite",
+    "https://www.paris.fr/pages/accessibilite-233",
+    "https://www.culture.gouv.fr/accessibilite-partiellement-conforme"
+  ],
+  "notes": [
+    "The mandatory home-page mention 'Accessibilité : partiellement conforme' is usually also the link text, so it counts as a strict statement name.",
+    "Any defenseurdesdroits.fr link (formulaire, délégués) is accepted. No outdated link is known.",
+    "A 'Dérogations pour charge disproportionnée' heading followed by 'Aucune'/'Néant'/'Sans objet' does not count as a burden claim; other empty sections may still give a false has-unreasonably-burdensome-accommodation.",
+    "The RGAA percentage ('nn % des critères RGAA sont respectés') is not used."
+  ]
+}

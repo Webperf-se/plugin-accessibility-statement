@@ -1,7 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { HarAnalyzer } from '../lib/harAnalyzer.js';
-import { LOCALE_DK, LOCALE_NO, LOCALE_FI } from '../lib/locales.js';
+import { HarAnalyzer } from '../../lib/harAnalyzer.js';
+import { getCountries } from '../../lib/countries.js';
+
+const { dk: LOCALE_DK, no: LOCALE_NO, fi: LOCALE_FI } = getCountries();
 
 function dateIssuesFor(bodyText, locale) {
   const analyzer = new HarAnalyzer();

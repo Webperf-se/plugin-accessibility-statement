@@ -1,0 +1,74 @@
+{
+  "code": "no",
+  "name": "Norway",
+  "status": "supported",
+  "languages": ["no", "nb", "nn"],
+  "tlds": ["no"],
+  "law": {
+    "name": "Likestillings- og diskrimineringsloven § 18 og forskrift om universell utforming av IKT-løsninger (FOR-2013-06-21-732) § 4e",
+    "url": "https://lovdata.no/dokument/SF/forskrift/2013-06-21-732"
+  },
+  "authority": {
+    "name": "Tilsynet for universell utforming av ikt",
+    "url": "https://www.uutilsynet.no/"
+  },
+  "statement": {
+    "strict": ["tilgjengelighetserkl(æ|ae|&aelig;|&#230;)ring", "tilgjengelegheitserkl(æ|ae|&aelig;|&#230;)ring"],
+    "loose": ["tilgjengelighet", "tilgjengelegheit", "universell utforming"],
+    "linkText": [
+      { "pattern": "om (nettstedet|nettstaden)", "precision": 0.29 }
+    ],
+    "externalHosts": ["uustatus.no"],
+    "externalOnly": false
+  },
+  "compliance": {
+    "full": ["\\b(er[ \\t\\r\\n]+i[ \\t\\r\\n]+)?samsvar[ \\t\\r\\n]+med\\b"],
+    "partial": ["\\bdelvis[ \\t\\r\\n]+(i[ \\t\\r\\n]+)?samsvar\\b"],
+    "none": ["\\b(ikke|ikkje)[ \\t\\r\\n]+i[ \\t\\r\\n]+samsvar\\b"],
+    "negation": ["\\b(ikke|ikkje|delvis)\\b"]
+  },
+  "burden": ["uforholdsmessig stor byrde", "uforholdsmessig byrde"],
+  "burdenReference": "§ 10 forskriften",
+  "evaluation": [
+    "egenvurdering",
+    "egenevaluering",
+    "eigenvurdering",
+    "tredjepart",
+    "ekstern (vurdering|evaluering|gjennomgang|test)",
+    "vurdert av",
+    "evaluert av",
+    "testet av",
+    "gjennomgang av",
+    "uu-tilsynet"
+  ],
+  "dates": {
+    "months": ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"],
+    "triggers": [
+      { "pattern": "oppdatert", "weight": 0.9 },
+      { "pattern": "revidert", "weight": 0.9 },
+      { "pattern": "opprett(et|a)", "weight": 0.5 },
+      { "pattern": "utarbeid(et|a|d)", "weight": 0.5 }
+    ],
+    "formats": ["d. month yyyy", "d month yyyy", "month yyyy", "yyyy-mm-dd", "dd.mm.yyyy"]
+  },
+  "enforcement": {
+    "label": "Diskrimineringsnemnda (complaints)",
+    "accepted": [],
+    "canonical": ["diskrimineringsnemnda\\.no"],
+    "old": [],
+    "text": ["diskrimineringsnemnda"],
+    "oldText": []
+  },
+  "sources": [
+    "https://lovdata.no/dokument/SF/forskrift/2013-06-21-732",
+    "https://www.uutilsynet.no/veiledning/tilgjengelighetserklaering/1127",
+    "https://uustatus.no/nb/erklaringer/publisert/1ec23640-b121-4a63-918c-0d4d707fb7af",
+    "https://uustatus.no/nb/erklaringer/publisert/9336562c-fbb2-48db-b3f2-54df3b231a44"
+  ],
+  "notes": [
+    "Statements are generated and published on uustatus.no (Digdir). Some sites have an intermediate page on their own domain that links on to uustatus.no.",
+    "uustatus.no answered 502 to curl (bot filter) but served a browser; browsertime should be fine.",
+    "'er ikke i samsvar' (not compliant) comes from the generator and was not seen live.",
+    "Evaluation-method phrases are derived from the EU model statement, not observed live."
+  ]
+}

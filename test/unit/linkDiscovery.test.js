@@ -2,7 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
 import { HarAnalyzer } from '../../lib/harAnalyzer.js';
-import { LOCALE_SE } from '../../lib/locales.js';
+import { getCountries } from '../../lib/countries.js';
+
+const se = getCountries().se;
 
 const start = 'https://www.example.se';
 const analyzer = new HarAnalyzer();
@@ -13,7 +15,7 @@ function body(html) {
 
 test('links to the same site without www are accepted and moved to the start host', () => {
   const urls = analyzer.getInterestingUrls(start, body(
-    '<a href="https://example.se/om/tillganglighetsredogorelse">Tillgänglighetsredogörelse</a>'), LOCALE_SE, start + '/');
+    '<a href="https://example.se/om/tillganglighetsredogorelse">Tillgänglighetsredogörelse</a>'), se, start + '/');
   assert.deepEqual(Object.keys(urls), ['https://www.example.se/om/tillganglighetsredogorelse']);
   assert.equal(urls['https://www.example.se/om/tillganglighetsredogorelse'], 0.55);
 });
@@ -21,7 +23,7 @@ test('links to the same site without www are accepted and moved to the start hos
 test('relative links without a leading slash and protocol relative links are resolved', () => {
   const urls = analyzer.getInterestingUrls(start, body(
     '<a href="tillganglighet">Tillgänglighet</a><a href="//www.example.se/om-webbplatsen">Om webbplatsen</a>'),
-    LOCALE_SE, 'https://www.example.se/om/');
+    se, 'https://www.example.se/om/');
   assert.ok('https://www.example.se/om/tillganglighet' in urls);
   assert.ok('https://www.example.se/om-webbplatsen' in urls);
 });
@@ -30,7 +32,7 @@ test('links to other sites, mail, phone and fragments are ignored', () => {
   const urls = analyzer.getInterestingUrls(start, body(
     '<a href="https://other.se/tillganglighet">Tillgänglighet</a>' +
     '<a href="mailto:a@example.se">Tillgänglighet</a><a href="#tillganglighet">Tillgänglighet</a>' +
-    '<a href="https://evil.example/www.example.se">Tillgänglighet</a>'), LOCALE_SE, start + '/');
+    '<a href="https://evil.example/www.example.se">Tillgänglighet</a>'), se, start + '/');
   assert.deepEqual(urls, {});
 });
 
@@ -68,18 +70,25 @@ test('paths of ordinary <a> links are not matched as page data', () => {
 test('page data is only used when no link in the page is about accessibility', () => {
   const data = '<script>{"url":"https://www.example.se/x/tillganglighetsredogorelse-app/"}</script>';
   const withLink = analyzer.getInterestingUrlsWithFallback(start,
-    body('<a href="/tillganglighet/">Tillgänglighet</a>' + data), data, start + '/', LOCALE_SE);
+    body('<a href="/tillganglighet/">Tillgänglighet</a>' + data), data, start + '/', se);
   assert.deepEqual(Object.keys(withLink), ['https://www.example.se/tillganglighet/']);
   const withoutLink = analyzer.getInterestingUrlsWithFallback(start,
-    body('<a href="/omoss/">Om oss</a>' + data), data, start + '/', LOCALE_SE);
+    body('<a href="/omoss/">Om oss</a>' + data), data, start + '/', se);
   assert.equal(withoutLink['https://www.example.se/x/tillganglighetsredogorelse-app/'], 0.5);
   assert.equal(withoutLink['https://www.example.se/omoss/'], 0.25);
+});
+
+test('the page data fallback only applies to Swedish rules', () => {
+  const data = '<script>{"url":"https://www.example.de/x/tillganglighetsredogorelse/"}</script>';
+  const urls = analyzer.getInterestingUrlsWithFallback('https://www.example.de',
+    body('<a href="/impressum">Impressum</a>' + data), data, 'https://www.example.de/', getCountries().de);
+  assert.deepEqual(urls, {});
 });
 
 test('a link on a site with a port keeps the port', () => {
   // org_url_start is built from protocol and hostname only, so it never
   // carries the port the page was served on.
   const urls = analyzer.getInterestingUrls('http://127.0.0.1', body(
-    '<a href="a11y-statement.html">Tillgänglighetsredogörelse</a>'), LOCALE_SE, 'http://127.0.0.1:3000/');
+    '<a href="a11y-statement.html">Tillgänglighetsredogörelse</a>'), se, 'http://127.0.0.1:3000/');
   assert.deepEqual(Object.keys(urls), ['http://127.0.0.1:3000/a11y-statement.html']);
 });

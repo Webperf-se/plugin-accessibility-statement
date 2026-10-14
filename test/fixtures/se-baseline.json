@@ -1,0 +1,1334 @@
+{
+  "crawl-finds-statement": {
+    "visited": [
+      "https://www.example.se/",
+      "https://www.example.se/tillganglighetsredogorelse"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/",
+        "group": "crawl-finds-statement",
+        "issues": {},
+        "interesting-urls": {
+          "https://www.example.se/tillganglighetsredogorelse": 0.55,
+          "https://www.example.se/tillganglighet": 0.4,
+          "https://www.example.se/tillganglighet-pa-webben": 0.35,
+          "https://www.example.se/om-webbplatsen": 0.29,
+          "https://www.example.se/om-oss": 0.25
+        },
+        "country": "se",
+        "body-text": "Välkommen till Exempelkommunen Nyheter och information.",
+        "h1": "Välkommen till Exempelkommunen",
+        "page-title": "Exempelkommunen"
+      },
+      {
+        "url": "https://www.example.se/tillganglighetsredogorelse",
+        "group": "crawl-finds-statement",
+        "issues": {
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "info",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/tillganglighetsredogorelse",
+                "rule": "has-canonical-notification-function-link",
+                "category": "a11y",
+                "text": "Correct link (canonical) to DIGG's report function",
+                "severity": "info",
+                "data": {
+                  "text": "Myndigheten för digital förvaltning",
+                  "url": "https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet"
+                }
+              }
+            ]
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/tillganglighetsredogorelse",
+                "rule": "updated-date-older-than-5years",
+                "category": "a11y",
+                "text": "Accessibility statement seems to be older than 5 years",
+                "severity": "error"
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Tillgänglighetsredogörelse Exempelkommunen står bakom den här webbplatsen. Den här webbplatsen är helt förenlig med lagen om tillgänglighet till digital offentlig service. Vi har gjort en självskattning av webbplatsen med hjälp av checklistor. Du kan anmäla till . Redogörelsen uppdaterades 3 mars 2019. Senaste bedömningen gjordes 14 februari 2019.",
+        "compatible-word": "helt förenlig",
+        "compatible-text": "Den här webbplatsen är helt förenlig med lagen om tillgänglighet till digital offentlig service.",
+        "notification-function-link-text": "Myndigheten för digital förvaltning",
+        "notification-function-link-url": "https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet",
+        "h1": "Tillgänglighetsredogörelse",
+        "page-title": "Tillgänglighetsredogörelse - Exempelkommunen",
+        "is-a11y-statement": true,
+        "evaluation-method-word": "självskattning",
+        "evaluation-method-text": "Vi har gjort en självskattning av webbplatsen med hjälp av checklistor.",
+        "dates": [
+          {
+            "word": "bedömningen",
+            "text": "Senaste bedömningen gjordes 14 februari 2019.",
+            "type": "bedömning",
+            "date": [
+              2019,
+              2,
+              1
+            ],
+            "weight": 1
+          },
+          {
+            "word": "Redogörelsen",
+            "text": ". Redogörelsen uppdaterades 3 mars 2019.",
+            "type": "redogörelse",
+            "date": [
+              2019,
+              3,
+              3
+            ],
+            "weight": 0.9
+          },
+          {
+            "word": "Redogörelsen",
+            "text": ". Redogörelsen uppdaterades 3 mars 2019.",
+            "type": "redogörelse",
+            "date": [
+              2019,
+              3,
+              1
+            ],
+            "weight": 0.9
+          }
+        ]
+      }
+    ],
+    "hasStatement": true
+  },
+  "crawl-no-statement": {
+    "visited": [
+      "https://www.example.se/",
+      "https://www.example.se/tillganglighetsredogorelse",
+      "https://www.example.se/tillganglighet",
+      "https://www.example.se/tillganglighet-pa-webben",
+      "https://www.example.se/om-webbplatsen",
+      "https://www.example.se/om-oss"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/",
+        "group": "crawl-no-statement",
+        "issues": {
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "critical",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/",
+                "rule": "no-a11y-statement",
+                "category": "a11y",
+                "text": "Unable to find accessibility statement",
+                "severity": "critical",
+                "line": 0,
+                "column": 0
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {
+          "https://www.example.se/tillganglighetsredogorelse": 0.55,
+          "https://www.example.se/tillganglighet": 0.4,
+          "https://www.example.se/tillganglighet-pa-webben": 0.35,
+          "https://www.example.se/om-webbplatsen": 0.29,
+          "https://www.example.se/om-oss": 0.25
+        },
+        "country": "se",
+        "body-text": "Välkommen till Exempelkommunen Nyheter och information.",
+        "h1": "Välkommen till Exempelkommunen",
+        "page-title": "Exempelkommunen"
+      },
+      {
+        "url": "https://www.example.se/tillganglighetsredogorelse",
+        "group": "crawl-no-statement",
+        "issues": {},
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Kontakta oss Ring oss på 0123-456 789. Sidan uppdaterades 3 mars 2019.",
+        "h1": "Kontakta oss",
+        "page-title": "Kontakt"
+      },
+      {
+        "url": "https://www.example.se/tillganglighet",
+        "group": "crawl-no-statement",
+        "issues": {},
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Kontakta oss Ring oss på 0123-456 789. Sidan uppdaterades 3 mars 2019.",
+        "h1": "Kontakta oss",
+        "page-title": "Kontakt"
+      },
+      {
+        "url": "https://www.example.se/tillganglighet-pa-webben",
+        "group": "crawl-no-statement",
+        "issues": {},
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Kontakta oss Ring oss på 0123-456 789. Sidan uppdaterades 3 mars 2019.",
+        "h1": "Kontakta oss",
+        "page-title": "Kontakt"
+      },
+      {
+        "url": "https://www.example.se/om-webbplatsen",
+        "group": "crawl-no-statement",
+        "issues": {},
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Kontakta oss Ring oss på 0123-456 789. Sidan uppdaterades 3 mars 2019.",
+        "h1": "Kontakta oss",
+        "page-title": "Kontakt"
+      },
+      {
+        "url": "https://www.example.se/om-oss",
+        "group": "crawl-no-statement",
+        "issues": {},
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Kontakta oss Ring oss på 0123-456 789. Sidan uppdaterades 3 mars 2019.",
+        "h1": "Kontakta oss",
+        "page-title": "Kontakt"
+      }
+    ],
+    "hasStatement": false
+  },
+  "single-full": {
+    "visited": [
+      "https://www.example.se/full"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/full",
+        "group": "single-full",
+        "issues": {
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "info",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/full",
+                "rule": "has-canonical-notification-function-link",
+                "category": "a11y",
+                "text": "Correct link (canonical) to DIGG's report function",
+                "severity": "info",
+                "data": {
+                  "text": "Myndigheten för digital förvaltning",
+                  "url": "https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet"
+                }
+              }
+            ]
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/full",
+                "rule": "updated-date-older-than-5years",
+                "category": "a11y",
+                "text": "Accessibility statement seems to be older than 5 years",
+                "severity": "error"
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Tillgänglighetsredogörelse Exempelkommunen står bakom den här webbplatsen. Den här webbplatsen är helt förenlig med lagen om tillgänglighet till digital offentlig service. Vi har gjort en självskattning av webbplatsen med hjälp av checklistor. Du kan anmäla till . Redogörelsen uppdaterades 3 mars 2019. Senaste bedömningen gjordes 14 februari 2019.",
+        "compatible-word": "helt förenlig",
+        "compatible-text": "Den här webbplatsen är helt förenlig med lagen om tillgänglighet till digital offentlig service.",
+        "notification-function-link-text": "Myndigheten för digital förvaltning",
+        "notification-function-link-url": "https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen/anmal-bristande-tillganglighet",
+        "h1": "Tillgänglighetsredogörelse",
+        "page-title": "Tillgänglighetsredogörelse - Exempelkommunen",
+        "is-a11y-statement": true,
+        "evaluation-method-word": "självskattning",
+        "evaluation-method-text": "Vi har gjort en självskattning av webbplatsen med hjälp av checklistor.",
+        "dates": [
+          {
+            "word": "bedömningen",
+            "text": "Senaste bedömningen gjordes 14 februari 2019.",
+            "type": "bedömning",
+            "date": [
+              2019,
+              2,
+              1
+            ],
+            "weight": 1
+          },
+          {
+            "word": "Redogörelsen",
+            "text": ". Redogörelsen uppdaterades 3 mars 2019.",
+            "type": "redogörelse",
+            "date": [
+              2019,
+              3,
+              3
+            ],
+            "weight": 0.9
+          },
+          {
+            "word": "Redogörelsen",
+            "text": ". Redogörelsen uppdaterades 3 mars 2019.",
+            "type": "redogörelse",
+            "date": [
+              2019,
+              3,
+              1
+            ],
+            "weight": 0.9
+          }
+        ]
+      }
+    ],
+    "hasStatement": true
+  },
+  "single-old-link": {
+    "visited": [
+      "https://www.example.se/old"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/old",
+        "group": "single-old-link",
+        "issues": {
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/old",
+                "rule": "compatible-word-not",
+                "category": "a11y",
+                "text": "Self-indicates that website is not compliant with legal requirements",
+                "severity": "error"
+              }
+            ]
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "warning",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/old",
+                "rule": "has-old-notification-function-link",
+                "category": "a11y",
+                "text": "Uses old or incorrect link to DIGG's report function",
+                "severity": "warning",
+                "data": {
+                  "text": "Digg",
+                  "url": "https://www.digg.se/digital-tillganglighet/anmal-bristande-tillganglighet"
+                }
+              }
+            ]
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/old",
+                "rule": "has-unreasonably-burdensome-accommodation",
+                "category": "a11y",
+                "text": "Claims resolution to be unreasonably burdensome (12 §)",
+                "severity": "error"
+              }
+            ]
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/old",
+                "rule": "updated-date-older-than-5years",
+                "category": "a11y",
+                "text": "Accessibility statement seems to be older than 5 years",
+                "severity": "error"
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Tillgänglighet på Exempel Webbplatsen är inte förenlig med lagen om tillgänglighet till digital offentlig service. Vi bedömer att det vore oskäligt betungande enligt 12 § lagen att åtgärda bristerna i de gamla pdf-dokumenten. Anmäl till om du upplever brister. Webbplatsen granskades 2018-05-04 av en extern tillgänglighetskonsult.",
+        "compatible-word": "inte förenlig",
+        "compatible-text": "Webbplatsen är inte förenlig med lagen om tillgänglighet till digital offentlig service.",
+        "notification-function-link-text": "Digg",
+        "notification-function-link-url": "https://www.digg.se/digital-tillganglighet/anmal-bristande-tillganglighet",
+        "unreasonably-burdensome-accommodation-word": "12 § lagen",
+        "unreasonably-burdensome-accommodation-text": "Vi bedömer att det vore oskäligt betungande enligt 12 § lagen att åtgärda bristerna i de gamla pdf-dokumenten.",
+        "h1": "Tillgänglighet på Exempel",
+        "page-title": "Tillgänglighet",
+        "is-a11y-statement": true,
+        "evaluation-method-word": "tillgänglighetskonsult",
+        "evaluation-method-text": "av en extern tillgänglighetskonsult.",
+        "dates": []
+      }
+    ],
+    "hasStatement": true
+  },
+  "single-partial-short-link": {
+    "visited": [
+      "https://www.example.se/partial"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/partial",
+        "group": "single-partial-short-link",
+        "issues": {
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/partial",
+                "rule": "no-compatible-word",
+                "category": "a11y",
+                "text": "Uses wording close to a compliance statement, but not one of the exact required phrases - state compliance using the required wording instead",
+                "severity": "error"
+              }
+            ]
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/partial",
+                "rule": "has-unreasonably-burdensome-accommodation",
+                "category": "a11y",
+                "text": "Claims resolution to be unreasonably burdensome (12 §)",
+                "severity": "error"
+              }
+            ]
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/partial",
+                "rule": "no-evaluation-method",
+                "category": "a11y",
+                "text": "Unable to find which audit method used",
+                "severity": "error"
+              }
+            ]
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/partial",
+                "rule": "updated-date-older-than-5years",
+                "category": "a11y",
+                "text": "Accessibility statement seems to be older than 5 years",
+                "severity": "error"
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Tillgänglighet för webbplatsen Den här webbplatsen är ej helt förenlig med lagen om tillgänglighet till digital offentlig service. Oskäligt betungande anpassning gäller för äldre filmer. Anmäl till . Uppdaterad i juni 2017.",
+        "notification-function-link-text": "Digg",
+        "notification-function-link-url": "https://www.digg.se/tdosanmalan",
+        "unreasonably-burdensome-accommodation-word": "Oskäligt betungande anpassning",
+        "unreasonably-burdensome-accommodation-text": ". Oskäligt betungande anpassning gäller för äldre filmer.",
+        "h1": "Tillgänglighet för webbplatsen",
+        "page-title": "Om webbplatsen",
+        "is-a11y-statement": true,
+        "dates": []
+      }
+    ],
+    "hasStatement": true
+  },
+  "single-weak": {
+    "visited": [
+      "https://www.example.se/weak"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/weak",
+        "group": "single-weak",
+        "issues": {
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "critical",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/weak",
+                "rule": "no-a11y-statement",
+                "category": "a11y",
+                "text": "Unable to find accessibility statement",
+                "severity": "critical",
+                "line": 0,
+                "column": 0
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {},
+        "country": "se",
+        "body-text": "Tillgänglighet Vi jobbar med tillgänglighet varje dag.",
+        "h1": "Tillgänglighet",
+        "page-title": "Tillgänglighet"
+      }
+    ],
+    "hasStatement": false
+  },
+  "single-test-data": {
+    "visited": [
+      "https://www.example.se/a11y-statement.html"
+    ],
+    "knowledgeData": [
+      {
+        "url": "https://www.example.se/a11y-statement.html",
+        "group": "single-test-data",
+        "issues": {
+          "compatible-word-partly": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-partly",
+            "category": "a11y",
+            "severity": "error",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/a11y-statement.html",
+                "rule": "compatible-word-partly",
+                "category": "a11y",
+                "text": "Self-indicates that the website is only partially compliant with the legal requirements",
+                "severity": "error"
+              }
+            ]
+          },
+          "updated-date-older-than-1years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-1years",
+            "category": "a11y",
+            "severity": "warning",
+            "subIssues": [
+              {
+                "url": "https://www.example.se/a11y-statement.html",
+                "rule": "updated-date-older-than-1years",
+                "category": "a11y",
+                "text": "Accessibility statement seems to be older than 1 year",
+                "severity": "warning"
+              }
+            ]
+          },
+          "no-network": {
+            "test": "a11y-statement",
+            "rule": "no-network",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-updated-date": {
+            "test": "a11y-statement",
+            "rule": "no-updated-date",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-2years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-2years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-3years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-3years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-4years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-4years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "updated-date-older-than-5years": {
+            "test": "a11y-statement",
+            "rule": "updated-date-older-than-5years",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-evaluation-method": {
+            "test": "a11y-statement",
+            "rule": "no-evaluation-method",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-canonical-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-canonical-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-old-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "has-old-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-notification-function-link": {
+            "test": "a11y-statement",
+            "rule": "no-notification-function-link",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "compatible-word-not": {
+            "test": "a11y-statement",
+            "rule": "compatible-word-not",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-compatible-word": {
+            "test": "a11y-statement",
+            "rule": "no-compatible-word",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "has-unreasonably-burdensome-accommodation": {
+            "test": "a11y-statement",
+            "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-a11y-statement": {
+            "test": "a11y-statement",
+            "rule": "no-a11y-statement",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "no-country-rules": {
+            "test": "a11y-statement",
+            "rule": "no-country-rules",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          }
+        },
+        "interesting-urls": {
+          "https://www.example.se/sv/om-webbplatsen/tillganglighetsredogorelse-for-example.com/rapportera-brister-i-webbplatsens-tillganglighet/": 0.3
+        },
+        "country": "se",
+        "body-text": "Bootstrap Tillgänglighetsredogörelse för example.com WebPerf Core teamet står bakom den här webbplatsen. Vi vill att så många som möjligt ska kunna använda den. Den här sidan beskriver hur example.com uppfyller lagen om tillgänglighet till digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera brister till oss så att vi kan åtgärda dem. Hur tillgänglig är webbplatsen? Den här tjänsten är delvis förenlig med lagen om tillgänglighet till digital offentlig service. Vad kan du göra om du inte kan använda delar av webbplatsen? Om du behöver information från example.com i något annat format, till exempel tillgänglig PDF, stor text, Lättläst, ljudinspelning eller punktskrift kan du kontakta oss via e-post. Svarstiden är normalt en vecka. Du kan kontakta oss på följande sätt: skicka e-post till   ring vår växel på telefon 0123-456 789 Rapportera brister i webbplatsens tillgänglighet Vi strävar hela tiden efter att förbättra webbplatsens tillgänglighet. Om du upptäcker problem som inte är beskrivna på den här sidan, eller om du anser att vi inte uppfyller lagens krav, meddela oss så att vi får veta att problemet finns. Tillsyn Myndigheten för digital förvaltning, Digg, har ansvaret för tillsyn för lagen om tillgänglighet till digital offentlig service. Du kan anmäla till Digg om du tycker att vår digitala service har brister i tillgänglighet. Du kan också anmäla till Digg om du tycker att vår tillgänglighetsredogörelse har brister eller om du tycker att vi inte har hanterat din begäran om tillgängliggörande korrekt. Teknisk information om webbplatsens tillgänglighet Den här webbplatsens är delvis förenlig med nivå AA i standarden Web Content Accessibility Guidelines version 2.1. Vilket innehåll som inte är tillgängligt beskrivs nedan.   Kända tillgänglighetsproblem Beskrivning WCAG Nivå En del sidor som innehåller film har en sidregion som saknar maskinläsbar etikett. 4.1.2 Se till att skräddarsydda komponenter fungerar i hjälpmedel A Andra språk än svenska är inte alltid angivet i koden.  3.1.2 Ange språkförändringar i koden AA Rubriker i flera olika typer av block har felaktig rubriksättning vilket skapar en felaktig hierarki. En del rubriker är för generella. 2.4.6 Skriv beskrivande rubriker och etiketter 1.3.1 Ange i kod vad sidans olika delar har för roll AA   A Vissa ledtexter i formulär saknas eller behöver förbättras. 3.3.2 Skapa tydliga och klickbara fältetiketter A En del pdf:er saknar beskrivande länktext. 2.4.4 Tydliga länkar A En del filmer saknar textning. 1.2.2 Texta inspelad rörlig media A I en del diagram och kartor används färger som enda informationsbärare. 1.4.1 Använd inte enbart färg för att förmedla information A Vår ambition är att ha åtgärdat alla kända tillgänglighetsproblem senast 2024-12-31. Hur vi testat webbplatsen Vi har gjort en självskattning (intern testning) av example.com, med stöd av tillgänglighetsexperter hos våra leverantörer. Senaste bedömningen gjordes 6 november 2024 och är godkänd av chefen för enheten för kommunikationskanaler. Webbplatsen publicerades 18 juni 2019. Redogörelsen uppdaterades senast 7 november.  Senast granskad: 7 november 2024 Created by the Bootstrap team · © 2025",
+        "compatible-word": "delvis förenlig",
+        "compatible-text": "Den här tjänsten är delvis förenlig med lagen om tillgänglighet till digital offentlig service.",
+        "notification-function-link-text": "Anmäl till Myndigheten för\n                    digital förvaltning, Digg, på deras webbplats",
+        "notification-function-link-url": "https://www.digg.se/tdosanmalan",
+        "h1": "Tillgänglighetsredogörelse för example.com",
+        "page-title": "Starter Template · Bootstrap v5.3",
+        "is-a11y-statement": true,
+        "evaluation-method-word": "Hur vi testat webbplatsen",
+        "evaluation-method-text": "Hur vi testat webbplatsen",
+        "dates": [
+          {
+            "word": "bedömningen",
+            "text": "Senaste bedömningen gjordes 6 november 2024 och är godkänd av chefen för enheten för kommunikationskanaler.",
+            "type": "bedömning",
+            "date": [
+              2024,
+              11,
+              1
+            ],
+            "weight": 1
+          },
+          {
+            "word": "granskad:",
+            "text": "granskad: 7 november 2024",
+            "type": "gransk",
+            "date": [
+              2024,
+              11,
+              7
+            ],
+            "weight": 0.7
+          },
+          {
+            "word": "granskad:",
+            "text": "granskad: 7 november 2024",
+            "type": "gransk",
+            "date": [
+              2024,
+              11,
+              1
+            ],
+            "weight": 0.7
+          }
+        ]
+      }
+    ],
+    "hasStatement": true
+  }
+}

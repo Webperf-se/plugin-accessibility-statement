@@ -1,7 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { HarAnalyzer } from '../lib/harAnalyzer.js';
-import { LOCALE_NO, LOCALE_SE } from '../lib/locales.js';
+import { HarAnalyzer } from '../../lib/harAnalyzer.js';
+import { getCountries } from '../../lib/countries.js';
+
+const { no: LOCALE_NO, se: LOCALE_SE } = getCountries();
 
 // Real-world case (bufdir.no): a statement mentions both when it was first
 // created and when it was last updated, both under the same marker word
