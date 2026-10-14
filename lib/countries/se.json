@@ -44,16 +44,16 @@
     },
     "compliance": {
         "full": [
-            "helt förenlig"
+            "\\bhelt[ \\t\\r\\n]+förenlig\\b"
         ],
         "partial": [
-            "inte helt förenlig",
-            "ej helt förenlig",
-            "delvis förenlig"
+            "\\bdelvis[ \\t\\r\\n]+förenlig\\b"
         ],
         "none": [
-            "inte förenlig",
-            "ej förenlig"
+            "\\binte[ \\t\\r\\n]+förenlig\\b"
+        ],
+        "negation": [
+            "\\b(inte|ej)\\b"
         ]
     },
     "burden": [
@@ -154,9 +154,10 @@
     "notes": [
         "Encodes the rules that were hard-coded in harAnalyzer.js before country support was added; behaviour must stay identical.",
         "enforcement.accepted is the short DIGG URL: it counts as a correct link but produces no info issue, exactly as before.",
-        "Date triggers: the date whose trigger has the LOWEST weight is reported as the updated date (legacy behaviour), so 'uppdater' (0.5) beats 'bedömning' (1.0).",
         "letters keeps the A-ZÅÄÖ character classes the old code used to cut out the sentence around a match; other countries use Unicode letter classes.",
         "Two regex typos from the old code were fixed when moving to Unicode mode: a stray ']' after 'test(ning|er){0,1}' and a space inside '{1, 6}' in the self-assessment pattern.",
-        "'.nu' and '.stockholm' are treated as Swedish: .nu is used almost only by Swedish sites, and .stockholm is the City of Stockholm's TLD."
+        "'.nu' and '.stockholm' are treated as Swedish: .nu is used almost only by Swedish sites, and .stockholm is the City of Stockholm's TLD.",
+        "Compliance: only DIGG's three literal phrases count ('helt förenlig', 'delvis förenlig', 'inte förenlig'). 'inte helt förenlig' is none of them; a full phrase with 'inte'/'ej' earlier in the clause is reported as a near miss (no-compatible-word with its own message).",
+        "Date triggers: the highest weight wins, and on equal weight the most recent date, so 'redogörelse' (0.9) beats a more recent 'uppdater' (0.5)."
     ]
 }

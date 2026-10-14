@@ -25,6 +25,7 @@
   },
   "compliance": {
     "full": [
+      "\\btäyttää[ \\t\\r\\n]+(kokonaan|täysin)\\b",
       "täyttää[^.]{0,120}kokonaan",
       "täyttää (kaikki )?(saavutettavuus)?vaatimukset(?! osittain| suurilta)",
       "uppfyller helt",
@@ -32,13 +33,15 @@
       "fully (meets|compliant)"
     ],
     "partial": [
+      "\\btäyttää[ \\t\\r\\n]+osittain\\b",
       "täyttää[^.]{0,120}osittain",
       "täyttää[^.]{0,120}suurilta osin",
       "uppfyller delvis",
       "uppfyller[^.]{0,80}delvis",
       "partially (meets|compliant)"
     ],
-    "none": ["ei täytä", "uppfyller inte", "is not compliant", "does not meet"]
+    "none": ["\\bei[ \\t\\r\\n]+täytä(?![a-zA-ZäöåÄÖÅ])", "uppfyller inte", "is not compliant", "does not meet"],
+    "negation": ["\\bei\\b", "\\b(inte|ej)\\b", "\\bnot\\b"]
   },
   "burden": ["kohtuuton rasite", "oproportionell börda", "disproportionate burden"],
   "burdenReference": "",
@@ -60,12 +63,12 @@
   "dates": {
     "months": [],
     "triggers": [
-      { "pattern": "päivitet", "weight": 0.5 },
-      { "pattern": "uppdater", "weight": 0.5 },
-      { "pattern": "updated", "weight": 0.5 },
-      { "pattern": "laadit", "weight": 0.9 },
-      { "pattern": "upprätta", "weight": 0.9 },
-      { "pattern": "prepared", "weight": 0.9 }
+      { "pattern": "päivitet", "weight": 0.9 },
+      { "pattern": "uppdater", "weight": 0.9 },
+      { "pattern": "updated", "weight": 0.9 },
+      { "pattern": "laadit", "weight": 0.5 },
+      { "pattern": "upprätta", "weight": 0.5 },
+      { "pattern": "prepared", "weight": 0.5 }
     ],
     "formats": ["d.m.yyyy", "yyyy-mm-dd"]
   },

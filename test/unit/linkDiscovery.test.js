@@ -84,3 +84,11 @@ test('the page data fallback only applies to Swedish rules', () => {
     body('<a href="/impressum">Impressum</a>' + data), data, 'https://www.example.de/', getCountries().de);
   assert.deepEqual(urls, {});
 });
+
+test('a link on a site with a port keeps the port', () => {
+  // org_url_start is built from protocol and hostname only, so it never
+  // carries the port the page was served on.
+  const urls = analyzer.getInterestingUrls('http://127.0.0.1', body(
+    '<a href="a11y-statement.html">Tillgänglighetsredogörelse</a>'), se, 'http://127.0.0.1:3000/');
+  assert.deepEqual(Object.keys(urls), ['http://127.0.0.1:3000/a11y-statement.html']);
+});

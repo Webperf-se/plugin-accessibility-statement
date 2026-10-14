@@ -46,11 +46,11 @@
   "dates": {
     "months": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
     "triggers": [
-      { "pattern": "revisi(ó|o)n", "weight": 0.5 },
-      { "pattern": "revisad", "weight": 0.5 },
-      { "pattern": "actualizad", "weight": 0.5 },
-      { "pattern": "preparada", "weight": 0.9 },
-      { "pattern": "elaborada", "weight": 0.9 }
+      { "pattern": "revisi(ó|o)n", "weight": 0.9 },
+      { "pattern": "revisad", "weight": 0.9 },
+      { "pattern": "actualizad", "weight": 0.9 },
+      { "pattern": "preparada", "weight": 0.5 },
+      { "pattern": "elaborada", "weight": 0.5 }
     ],
     "formats": ["d de month de yyyy", "dd/mm/yyyy", "yyyy-mm-dd"]
   },

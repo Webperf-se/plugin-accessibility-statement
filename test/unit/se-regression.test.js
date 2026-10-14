@@ -1,6 +1,9 @@
 // Swedish behaviour must not change when rules move to lib/countries/se.json.
 // The snapshot was recorded with the hard-coded Swedish analyzer (before
-// country support). Re-record with UPDATE_SNAPSHOT=1 only on purpose.
+// country support) and re-recorded on purpose when merging #133: only DIGG's
+// three compliance phrases count ("ej helt förenlig" is now a near miss,
+// still an error), and the date with the highest trigger weight is rated.
+// Re-record with UPDATE_SNAPSHOT=1 only on purpose.
 import { test, mock } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -79,14 +82,8 @@ test('Swedish results are identical to the pre-refactoring snapshot', async () =
         const expected = JSON.parse(readFileSync(snapshotPath, 'utf8'));
         for (const name of Object.keys(expected)) {
             // The set of issues must match exactly, not only as a subset.
-            // The only rule added since the snapshot is no-country-rules,
-            // which must be resolved for Swedish sites.
             for (let i = 0; i < expected[name].knowledgeData.length; i++) {
-                const issues = { ...result[name].knowledgeData[i].issues };
-                if (issues['no-country-rules']) {
-                    assert.equal(issues['no-country-rules'].severity, 'resolved', `${name} no-country-rules`);
-                    delete issues['no-country-rules'];
-                }
+                const issues = result[name].knowledgeData[i].issues;
                 assert.deepEqual(
                     Object.keys(issues).sort(),
                     Object.keys(expected[name].knowledgeData[i].issues).sort(),

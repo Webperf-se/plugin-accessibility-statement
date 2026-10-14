@@ -19,12 +19,15 @@
       { "pattern": "om (webstedet|hjemmesiden|websitet)", "precision": 0.29 }
     ],
     "externalHosts": ["was.digst.dk"],
-    "externalOnly": false
+    "externalOnly": false,
+    "centralUrl": "https://was.digst.dk/{host}",
+    "notFoundTitle": ["^\\s*404\\b"]
   },
   "compliance": {
-    "full": ["overholder (loven|standarden) fuldt ud", "fully compliant"],
-    "partial": ["overholder (loven|standarden) delvist", "partially compliant"],
-    "none": ["overholder ikke (loven|standarden)", "is not compliant"]
+    "full": ["\\b(opfylder|overholder)[ \\t\\r\\n]+(standarden|loven)[ \\t\\r\\n]+fuldt[ \\t\\r\\n]+ud\\b", "fully compliant"],
+    "partial": ["\\b(opfylder|overholder)[ \\t\\r\\n]+(standarden|loven)?[ \\t\\r\\n]*delvis(t)?\\b", "partially compliant"],
+    "none": ["\\b(ikke[ \\t\\r\\n]+opfylder|opfylder[ \\t\\r\\n]+ikke|overholder[ \\t\\r\\n]+ikke)[ \\t\\r\\n]+(standarden|loven)\\b", "is not compliant"],
+    "negation": ["\\b(ikke|delvis(t)?|not)\\b"]
   },
   "burden": ["uforholdsm(æ|ae)ssig stor byrde", "uforholdsm(æ|ae)ssig byrde", "disproportionate burden"],
   "burdenReference": "",
@@ -44,12 +47,12 @@
   "dates": {
     "months": ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"],
     "triggers": [
-      { "pattern": "revideret", "weight": 0.5 },
-      { "pattern": "opdateret", "weight": 0.5 },
+      { "pattern": "revideret", "weight": 0.9 },
+      { "pattern": "opdateret", "weight": 0.9 },
       { "pattern": "gennemg(å|aa)et", "weight": 0.7 },
-      { "pattern": "offentliggjort", "weight": 0.9 },
-      { "pattern": "udarbejdet", "weight": 0.9 },
-      { "pattern": "oprettet", "weight": 0.9 }
+      { "pattern": "offentliggjort", "weight": 0.5 },
+      { "pattern": "udarbejdet", "weight": 0.5 },
+      { "pattern": "oprettet", "weight": 0.5 }
     ],
     "formats": ["d. month yyyy", "d month yyyy", "month yyyy", "yyyy-mm-dd", "dd.mm.yyyy"]
   },
@@ -79,6 +82,7 @@
   ],
   "notes": [
     "Statements are published on the central WAS tool (was.digst.dk/<slug>); the organisation's own site only links there. www.was.digst.dk redirects (308) to the bare host.",
+    "statement.centralUrl: the slug is the hostname without www. and with dots replaced by dashes (www.kk.dk -> was.digst.dk/kk-dk, verified live 2026-10-14; was.digst.dk/www-kk-dk is a 404 page), queued directly when the site has no link to the platform. statement.notFoundTitle: an unknown slug answers 200 with the title '404: Ingen tilgængelighedserklæring kunne findes', which must not count as a statement.",
     "Partial-compliance wording observed live; 'fuldt ud' and 'overholder ikke' come from guidance and are not verified live.",
     "There is no complaint URL; the enforcement reference is one of three e-mail addresses (Digitaliseringsstyrelsen or, from June 2026, Digitaliseringsministeriet). All three are accepted and none is treated as outdated.",
     "Evaluation-method phrases are derived from the EU model statement, not observed live."

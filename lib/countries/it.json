@@ -35,9 +35,9 @@
   "dates": {
     "months": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
     "triggers": [
-      { "pattern": "riesaminat", "weight": 0.5 },
-      { "pattern": "aggiornat", "weight": 0.5 },
-      { "pattern": "redatta", "weight": 0.9 }
+      { "pattern": "riesaminat", "weight": 0.9 },
+      { "pattern": "aggiornat", "weight": 0.9 },
+      { "pattern": "redatta", "weight": 0.5 }
     ],
     "formats": ["dd/mm/yyyy", "d month yyyy", "yyyy-mm-dd"]
   },

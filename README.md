@@ -87,11 +87,11 @@ sitespeed.io https://www.example.com --plugins.add plugin-accessibility-statemen
 Copy a file in `lib/countries/` that is close in structure (`fr.json` for a statement on the own site, `dk.json` for a central platform) and name it after the country code. The fields:
 
 - `code`, `name`, `status` (`supported` or `pending`), `tlds`, `languages`.
-- `statement.strict` (the legal name of the statement, matched in `<h1>` and `<title>`), `statement.loose` (the root word, accepted together with a compliance phrase, enforcement link or burden claim), `statement.linkText` (extra link texts with a precision), `statement.externalHosts` and `statement.externalOnly`.
-- `compliance.full`, `compliance.partial`, `compliance.none`: phrases for the self-declared compliance level.
+- `statement.strict` (the legal name of the statement, matched in `<h1>` and `<title>`), `statement.loose` (the root word, accepted together with a compliance phrase, enforcement link or burden claim), `statement.linkText` (extra link texts with a precision), `statement.externalHosts`, `statement.externalOnly` and `statement.centralUrl` (a statement URL on a central platform derived from the hostname, `{host}` being the hostname with dots as dashes, queued even when the site has no link to it).
+- `compliance.full`, `compliance.partial`, `compliance.none`: the literal phrases the regulator accepts for the self-declared compliance level. A partial or none phrase anywhere wins. `compliance.negation`: words that, earlier in the same clause, disqualify a full phrase ("inte är helt förenlig"); such a near miss gives `no-compatible-word` with its own message.
 - `burden` and `burdenReference`: the disproportionate burden claim and the legal reference shown in the issue text.
 - `evaluation`: words that describe how the site was evaluated.
-- `dates.months`, `dates.triggers` (words next to the date, with a weight; the lowest weight is the date that is rated) and `dates.formats` (see `DATE_FORMATS` in `lib/countries.js`).
+- `dates.months`, `dates.triggers` (words next to the date, with a weight; the date with the highest weight is rated, and on equal weight the most recent one) and `dates.formats` (see `DATE_FORMATS` in `lib/countries.js`).
 - `enforcement.canonical`, `enforcement.old` and `enforcement.accepted` (link patterns), `enforcement.text` and `enforcement.oldText` (patterns for e-mail addresses written in the text), and `enforcement.label` for issue texts.
 
 All patterns are regular expressions, compiled once with the `i` and `u` flags. Add phrases from real statements to `test/unit/countries.test.js` and run `npm test`.

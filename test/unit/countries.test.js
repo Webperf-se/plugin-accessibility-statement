@@ -87,7 +87,9 @@ describe('compliance phrases', () => {
         ['it', 'Questo sito web è pienamente conforme ai requisiti.', 'full'],
         ['it', 'Questo sito web non è conforme ai requisiti.', 'none'],
         ['se', 'Webbplatsen är delvis förenlig med lagen.', 'partial'],
-        ['se', 'Webbplatsen är inte helt förenlig med lagen.', 'partial'],
+        // Not one of DIGG's three phrases: a near miss, not partial.
+        ['se', 'Webbplatsen är inte helt förenlig med lagen.', 'near-miss'],
+        ['se', 'Vi bedömer att webbplatsen inte är helt förenlig med lagen.', 'near-miss'],
         ['se', 'Webbplatsen är helt förenlig med lagen.', 'full'],
         ['se', 'Webbplatsen är inte förenlig med lagen.', 'none']
     ];
@@ -102,18 +104,17 @@ describe('compliance phrases', () => {
 
 describe('dates', () => {
     const analyzer = new HarAnalyzer();
-    // Same choice as tryGetUpdatedDate(): the date whose trigger has the
-    // lowest weight. When a "month yyyy" reading of the same text has the
-    // same weight it wins and the day becomes 1 (legacy Swedish behaviour,
-    // kept on purpose), so only year and month are compared for the pick and
-    // the full date must be among the candidates.
+    // Same choice as tryGetUpdatedDate(): the highest trigger weight, and
+    // on equal weight the most recent date. A "month yyyy" reading of the
+    // same text gives day 1, so only year and month are compared for the
+    // pick and the full date must be among the candidates.
     function checkDate(text, code, expected) {
         const dates = analyzer.findDates(text, countries[code]);
         assert.ok(dates.length > 0, `no date found in "${text}"`);
         assert.ok(dates.some(d => d.date.join('-') === expected.join('-')),
             `${expected.join('-')} not among ${dates.map(d => d.date.join('-')).join(', ')}`);
-        dates.sort((a, b) => b.weight - a.weight);
-        assert.deepEqual(dates.pop().date.slice(0, 2), expected.slice(0, 2));
+        dates.sort((a, b) => analyzer.compareDateCandidates(a, b));
+        assert.deepEqual(dates[0].date.slice(0, 2), expected.slice(0, 2));
     }
     const cases = [
         ['dk', 'Erklæringen blev senest revideret den 25. juni 2026.', [2026, 6, 25]],

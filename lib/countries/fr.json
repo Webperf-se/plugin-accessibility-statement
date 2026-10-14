@@ -40,11 +40,11 @@
   "dates": {
     "months": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
     "triggers": [
-      { "pattern": "mis(e|es)? (à|a) jour", "weight": 0.5 },
-      { "pattern": "r(é|e)examen", "weight": 0.5 },
-      { "pattern": "(é|e)tablie", "weight": 0.9 },
-      { "pattern": "r(é|e)alis(é|e)e", "weight": 0.9 },
-      { "pattern": "pr(é|e)par(é|e)e", "weight": 0.9 }
+      { "pattern": "mis(e|es)? (à|a) jour", "weight": 0.9 },
+      { "pattern": "r(é|e)examen", "weight": 0.9 },
+      { "pattern": "(é|e)tablie", "weight": 0.5 },
+      { "pattern": "r(é|e)alis(é|e)e", "weight": 0.5 },
+      { "pattern": "pr(é|e)par(é|e)e", "weight": 0.5 }
     ],
     "formats": ["d[er] month yyyy", "month yyyy", "dd/mm/yyyy", "yyyy-mm-dd"]
   },

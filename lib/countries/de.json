@@ -56,10 +56,10 @@
   "dates": {
     "months": ["januar", "februar", "märz", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "dezember"],
     "triggers": [
-      { "pattern": "(ü|ue)berpr(ü|ue)ft", "weight": 0.5 },
-      { "pattern": "aktualisiert", "weight": 0.5 },
-      { "pattern": "letzte pr(ü|ue)fung", "weight": 0.5 },
-      { "pattern": "erstellt", "weight": 0.9 }
+      { "pattern": "(ü|ue)berpr(ü|ue)ft", "weight": 0.9 },
+      { "pattern": "aktualisiert", "weight": 0.9 },
+      { "pattern": "letzte pr(ü|ue)fung", "weight": 0.9 },
+      { "pattern": "erstellt", "weight": 0.5 }
     ],
     "formats": ["d. month yyyy", "month yyyy", "dd.mm.yyyy", "yyyy-mm-dd"]
   },

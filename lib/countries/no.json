@@ -22,9 +22,10 @@
     "externalOnly": false
   },
   "compliance": {
-    "full": ["er i samsvar med krav(ene|a)"],
-    "partial": ["er delvis i samsvar"],
-    "none": ["er ikke i samsvar", "er ikkje i samsvar"]
+    "full": ["\\b(er[ \\t\\r\\n]+i[ \\t\\r\\n]+)?samsvar[ \\t\\r\\n]+med\\b"],
+    "partial": ["\\bdelvis[ \\t\\r\\n]+(i[ \\t\\r\\n]+)?samsvar\\b"],
+    "none": ["\\b(ikke|ikkje)[ \\t\\r\\n]+i[ \\t\\r\\n]+samsvar\\b"],
+    "negation": ["\\b(ikke|ikkje|delvis)\\b"]
   },
   "burden": ["uforholdsmessig stor byrde", "uforholdsmessig byrde"],
   "burdenReference": "§ 10 forskriften",
@@ -43,10 +44,10 @@
   "dates": {
     "months": ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"],
     "triggers": [
-      { "pattern": "oppdatert", "weight": 0.5 },
-      { "pattern": "revidert", "weight": 0.5 },
-      { "pattern": "opprett(et|a)", "weight": 0.9 },
-      { "pattern": "utarbeid(et|a|d)", "weight": 0.9 }
+      { "pattern": "oppdatert", "weight": 0.9 },
+      { "pattern": "revidert", "weight": 0.9 },
+      { "pattern": "opprett(et|a)", "weight": 0.5 },
+      { "pattern": "utarbeid(et|a|d)", "weight": 0.5 }
     ],
     "formats": ["d. month yyyy", "d month yyyy", "month yyyy", "yyyy-mm-dd", "dd.mm.yyyy"]
   },
