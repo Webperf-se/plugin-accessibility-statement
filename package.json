@@ -43,7 +43,7 @@
     "stop-server": "sudo pkill serve",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "node --test test/"
+    "test": "node --test \"test/**/*.test.js\""
   },
   "main": "./lib/index.js"
 }
