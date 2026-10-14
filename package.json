@@ -1,6 +1,6 @@
 {
   "name": "plugin-accessibility-statement",
-  "version": "2026.7.0",
+  "version": "2026.10.0",
   "type": "module",
   "exports": "./lib/index.js",
   "publishConfig": {
@@ -26,16 +26,16 @@
     "url": "https://github.com/Webperf-se/plugin-accessibility-statement/issues"
   },
   "engines": {
-    "node": ">=20.x"
+    "node": ">=24.15.0"
   },
   "devDependencies": {
-    "eslint": "10.8.0",
+    "eslint": "10.12.0",
     "@eslint/js": "10.0.1",
     "serve": "14.2.6",
     "serve-handler": "6.1.7"
   },
   "dependencies": {
-    "jsdom": "29.1.1",
+    "jsdom": "30.1.2",
     "@sitespeed.io/plugin": "1.0.2"
   },
   "scripts": {
@@ -43,7 +43,7 @@
     "stop-server": "sudo pkill serve",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "node --test test/unit/*.test.js"
+    "test": "node --test test/"
   },
   "main": "./lib/index.js"
 }

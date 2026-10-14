@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
 import { HarAnalyzer } from '../../lib/harAnalyzer.js';
+import { LOCALE_SE } from '../../lib/locales.js';
 
 const start = 'https://www.example.se';
 const analyzer = new HarAnalyzer();
@@ -12,7 +13,7 @@ function body(html) {
 
 test('links to the same site without www are accepted and moved to the start host', () => {
   const urls = analyzer.getInterestingUrls(start, body(
-    '<a href="https://example.se/om/tillganglighetsredogorelse">Tillgänglighetsredogörelse</a>'), start + '/');
+    '<a href="https://example.se/om/tillganglighetsredogorelse">Tillgänglighetsredogörelse</a>'), LOCALE_SE, start + '/');
   assert.deepEqual(Object.keys(urls), ['https://www.example.se/om/tillganglighetsredogorelse']);
   assert.equal(urls['https://www.example.se/om/tillganglighetsredogorelse'], 0.55);
 });
@@ -20,7 +21,7 @@ test('links to the same site without www are accepted and moved to the start hos
 test('relative links without a leading slash and protocol relative links are resolved', () => {
   const urls = analyzer.getInterestingUrls(start, body(
     '<a href="tillganglighet">Tillgänglighet</a><a href="//www.example.se/om-webbplatsen">Om webbplatsen</a>'),
-    'https://www.example.se/om/');
+    LOCALE_SE, 'https://www.example.se/om/');
   assert.ok('https://www.example.se/om/tillganglighet' in urls);
   assert.ok('https://www.example.se/om-webbplatsen' in urls);
 });
@@ -29,7 +30,7 @@ test('links to other sites, mail, phone and fragments are ignored', () => {
   const urls = analyzer.getInterestingUrls(start, body(
     '<a href="https://other.se/tillganglighet">Tillgänglighet</a>' +
     '<a href="mailto:a@example.se">Tillgänglighet</a><a href="#tillganglighet">Tillgänglighet</a>' +
-    '<a href="https://evil.example/www.example.se">Tillgänglighet</a>'), start + '/');
+    '<a href="https://evil.example/www.example.se">Tillgänglighet</a>'), LOCALE_SE, start + '/');
   assert.deepEqual(urls, {});
 });
 
@@ -67,10 +68,10 @@ test('paths of ordinary <a> links are not matched as page data', () => {
 test('page data is only used when no link in the page is about accessibility', () => {
   const data = '<script>{"url":"https://www.example.se/x/tillganglighetsredogorelse-app/"}</script>';
   const withLink = analyzer.getInterestingUrlsWithFallback(start,
-    body('<a href="/tillganglighet/">Tillgänglighet</a>' + data), data, start + '/');
+    body('<a href="/tillganglighet/">Tillgänglighet</a>' + data), data, start + '/', LOCALE_SE);
   assert.deepEqual(Object.keys(withLink), ['https://www.example.se/tillganglighet/']);
   const withoutLink = analyzer.getInterestingUrlsWithFallback(start,
-    body('<a href="/omoss/">Om oss</a>' + data), data, start + '/');
+    body('<a href="/omoss/">Om oss</a>' + data), data, start + '/', LOCALE_SE);
   assert.equal(withoutLink['https://www.example.se/x/tillganglighetsredogorelse-app/'], 0.5);
   assert.equal(withoutLink['https://www.example.se/omoss/'], 0.25);
 });
