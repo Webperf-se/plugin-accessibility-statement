@@ -150,6 +150,13 @@
             "severity": "resolved",
             "subIssues": []
           },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
           "no-a11y-statement": {
             "test": "a11y-statement",
             "rule": "no-a11y-statement",
@@ -348,6 +355,13 @@
           "has-unreasonably-burdensome-accommodation": {
             "test": "a11y-statement",
             "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
             "category": "a11y",
             "severity": "resolved",
             "subIssues": []
@@ -555,6 +569,13 @@
           "has-unreasonably-burdensome-accommodation": {
             "test": "a11y-statement",
             "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
             "category": "a11y",
             "severity": "resolved",
             "subIssues": []
@@ -775,6 +796,13 @@
             "severity": "resolved",
             "subIssues": []
           },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
           "no-a11y-statement": {
             "test": "a11y-statement",
             "rule": "no-a11y-statement",
@@ -955,6 +983,13 @@
             "severity": "resolved",
             "subIssues": []
           },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
           "no-a11y-statement": {
             "test": "a11y-statement",
             "rule": "no-a11y-statement",
@@ -1116,6 +1151,13 @@
             "severity": "resolved",
             "subIssues": []
           },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
           "no-country-rules": {
             "test": "a11y-statement",
             "rule": "no-country-rules",
@@ -1259,6 +1301,13 @@
           "has-unreasonably-burdensome-accommodation": {
             "test": "a11y-statement",
             "rule": "has-unreasonably-burdensome-accommodation",
+            "category": "a11y",
+            "severity": "resolved",
+            "subIssues": []
+          },
+          "statement-is-page-section": {
+            "test": "a11y-statement",
+            "rule": "statement-is-page-section",
             "category": "a11y",
             "severity": "resolved",
             "subIssues": []

@@ -92,3 +92,40 @@ test('a link on a site with a port keeps the port', () => {
     '<a href="a11y-statement.html">Tillgänglighetsredogörelse</a>'), se, 'http://127.0.0.1:3000/');
   assert.deepEqual(Object.keys(urls), ['http://127.0.0.1:3000/a11y-statement.html']);
 });
+
+test('a menu item in page data is rated by its label, not its path (utbildningsguiden.se)', () => {
+  const html = '<script>{"condensedMenuItems2":[{"displayName":"Om webbplatsen","URI":"/om-oss/om-webbplatsen"},' +
+    '{"displayName":"Webbkarta","URI":"/om-oss/webbkarta"},' +
+    '{"displayName":"Tillgänglighetsredogörelse","URI":"/om-oss/redogorelse"}]}</script>';
+  const urls = analyzer.getInterestingUrlsFromPageData(start, html, start + '/', se);
+  assert.equal(urls['https://www.example.se/om-oss/om-webbplatsen'], 0.29);
+  assert.equal(urls['https://www.example.se/om-oss/redogorelse'], 0.55);
+  assert.ok(!('https://www.example.se/om-oss/webbkarta' in urls));
+});
+
+test('a parent menu item keeps its own label and URL when it has child items', () => {
+  const html = '<script>{"name":"Om webbplatsen","url":"/om","children":[' +
+    '{"name":"Kontakt","url":"/om/kontakt"}]}</script>';
+  const urls = analyzer.getInterestingUrlsFromPageData(start, html, start + '/', se);
+  assert.deepEqual(urls, { 'https://www.example.se/om': 0.29 });
+});
+
+test('labelled page data links to other sites and files are ignored', () => {
+  const html = '<script>[{"name":"Tillgänglighet","url":"https://other.se/tillganglighet"},' +
+    '{"name":"Tillgänglighet","url":"/files/redogorelse.pdf"}]</script>';
+  assert.deepEqual(analyzer.getInterestingUrlsFromPageData(start, html, start + '/', se), {});
+});
+
+test('labels in page data are rated with the rules of the country, not only Swedish', () => {
+  const de = getCountries().de;
+  const html = '<script>{"title":"Erklärung zur Barrierefreiheit","href":"/service/barrierefreiheit"}</script>';
+  const urls = analyzer.getInterestingUrlsFromPageData('https://www.example.de', html, 'https://www.example.de/', de);
+  assert.ok(urls['https://www.example.de/service/barrierefreiheit'] > 0.1);
+});
+
+test('the page data fallback finds the "Om webbplatsen" menu when no anchor is about accessibility', () => {
+  const data = '<script>{"menu":[{"displayName":"Om webbplatsen","URI":"/om-oss/om-webbplatsen"}]}</script>';
+  const urls = analyzer.getInterestingUrlsWithFallback(start,
+    body('<a href="/start">Start</a>' + data), data, start + '/', se);
+  assert.equal(urls['https://www.example.se/om-oss/om-webbplatsen'], 0.29);
+});
